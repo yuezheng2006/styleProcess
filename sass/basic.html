@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>css预处理器 | Sass 的基础语法</title>
+    <meta name="description" content="css预处理语言 使用总结">
+    <link rel="icon" href="/styleProcess/logo.png">
+  <link rel="manifest" href="/styleProcess/manifest.json">
+    
+    <link rel="preload" href="/styleProcess/assets/css/18.styles.3e9f533d.css" as="style"><link rel="preload" href="/styleProcess/assets/js/app.e3b621a4.js" as="script"><link rel="preload" href="/styleProcess/assets/js/7.93e00f2e.js" as="script"><link rel="prefetch" href="/styleProcess/assets/js/10.185f2d56.js"><link rel="prefetch" href="/styleProcess/assets/js/1.625c0169.js"><link rel="prefetch" href="/styleProcess/assets/js/2.a8afffa5.js"><link rel="prefetch" href="/styleProcess/assets/js/3.09429867.js"><link rel="prefetch" href="/styleProcess/assets/js/4.dec1ca9b.js"><link rel="prefetch" href="/styleProcess/assets/js/5.10e73ff7.js"><link rel="prefetch" href="/styleProcess/assets/js/6.4543c32a.js"><link rel="prefetch" href="/styleProcess/assets/js/8.0e7f02cd.js"><link rel="prefetch" href="/styleProcess/assets/js/9.d0f68f7e.js"><link rel="prefetch" href="/styleProcess/assets/js/0.8a921080.js"><link rel="prefetch" href="/styleProcess/assets/js/11.b1e4c8db.js"><link rel="prefetch" href="/styleProcess/assets/js/12.3ada07ed.js"><link rel="prefetch" href="/styleProcess/assets/js/13.54014618.js"><link rel="prefetch" href="/styleProcess/assets/js/14.47e7d96b.js"><link rel="prefetch" href="/styleProcess/assets/js/15.0ae7a566.js"><link rel="prefetch" href="/styleProcess/assets/js/16.5d215985.js"><link rel="prefetch" href="/styleProcess/assets/js/17.f41f3037.js">
+    <link rel="stylesheet" href="/styleProcess/assets/css/18.styles.3e9f533d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/styleProcess/" class="home-link router-link-active"><!----><span class="site-name">
+      css预处理器
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>less语法总结</span><!----></p><ul class="sidebar-group-items"><li><a href="/styleProcess/less/" class="sidebar-link">less了解</a></li><li><a href="/styleProcess/less/var.html" class="sidebar-link">变量</a></li><li><a href="/styleProcess/less/loop.html" class="sidebar-link">循环</a></li><li><a href="/styleProcess/less/mixin.html" class="sidebar-link">混入</a></li><li><a href="/styleProcess/less/parent.html" class="sidebar-link">父选择</a></li><li><a href="/styleProcess/less/import.html" class="sidebar-link">引用</a></li><li><a href="/styleProcess/less/combine.html" class="sidebar-link">合并</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>sass语法使用</span><span class="arrow down"></span></p><ul class="sidebar-group-items"><li><a href="/styleProcess/sass/" class="sidebar-link">sass了解</a></li><li><a href="/styleProcess/sass/basic.html" class="active sidebar-link">sass基础</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#sass-普通变量与默认变量" class="sidebar-link">[Sass]普通变量与默认变量</a></li><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#sass-局部变量和全局变量" class="sidebar-link">[Sass]局部变量和全局变量</a></li><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#全局变量的影子" class="sidebar-link">全局变量的影子</a></li><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#什么时候声明变量？" class="sidebar-link">什么时候声明变量？</a></li><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#sass-嵌套" class="sidebar-link">[Sass]嵌套</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#选择器嵌套" class="sidebar-link">选择器嵌套</a></li><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#属性嵌套" class="sidebar-link">属性嵌套</a></li><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#伪类嵌套" class="sidebar-link">伪类嵌套</a></li><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#避免选择器嵌套：" class="sidebar-link">避免选择器嵌套：</a></li></ul></li><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#sass-混合宏" class="sidebar-link">[Sass]混合宏</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#声明混合宏" class="sidebar-link">声明混合宏</a></li><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#调用混合宏" class="sidebar-link">调用混合宏</a></li><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#sass-混合宏的参数" class="sidebar-link">[Sass]混合宏的参数</a></li><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#混合宏的不足" class="sidebar-link">混合宏的不足</a></li></ul></li><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#sass-扩展-继承" class="sidebar-link">[Sass]扩展/继承</a></li><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#sass-占位符" class="sidebar-link">[Sass]占位符 %</a></li><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#sass-混合宏-vs-继承-vs-占位符" class="sidebar-link">[Sass]混合宏 VS 继承 VS 占位符</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#sass-插值" class="sidebar-link">[Sass]插值#{}</a></li><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#sass-注释" class="sidebar-link">[Sass]注释</a></li><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#sass-数据类型" class="sidebar-link">[Sass]数据类型</a></li><li class="sidebar-sub-header"><a href="/styleProcess/sass/basic.html#sass-列表函数（sass-list-functions）：" class="sidebar-link">Sass 列表函数（Sass list functions）：</a></li></ul></li></ul></li><li><a href="/styleProcess/sass/diff.html" class="sidebar-link">sass和scss差异</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>stylus语法使用</span><span class="arrow right"></span></p><!----></div></li></ul></div><div class="page"><div class="content"><h1 id="sass-的基础语法"><a href="#sass-的基础语法" aria-hidden="true" class="header-anchor">#</a> Sass 的基础语法</h1><ul><li>变量</li><li>嵌套</li><li>混合宏</li><li>扩展/继承</li><li>占位符</li></ul><h2 id="sass-普通变量与默认变量"><a href="#sass-普通变量与默认变量" aria-hidden="true" class="header-anchor">#</a> [Sass]普通变量与默认变量</h2><ol><li>普通变量：定义之后可以在全局范围内使用。</li></ol><pre class="language-scss"><code>    <span class="token property"><span class="token variable">$fontSize</span></span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+    <span class="token selector">body</span><span class="token punctuation">{</span>
+        <span class="token property">font-size</span><span class="token punctuation">:</span><span class="token variable">$fontSize</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><pre><code>编译后的 css 代码：
+</code></pre><pre class="language-css"><code>    <span class="token selector">body</span><span class="token punctuation">{</span>
+        <span class="token property">font-size</span><span class="token punctuation">:</span>12px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><ol start="2"><li><p>默认变量</p><p>sass 的默认变量仅需要在值后面加上 <span style="color:blue"> !default </span>即可。</p><pre class="language-scss"><code>    <span class="token property"><span class="token variable">$baseLineHeight</span></span><span class="token punctuation">:</span>1.5 <span class="token statement keyword">!default</span><span class="token punctuation">;</span>
+    <span class="token selector">body</span><span class="token punctuation">{</span>
+        <span class="token property">line-height</span><span class="token punctuation">:</span> <span class="token variable">$baseLineHeight</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>编译后的 css 代码：</p><pre class="language-css"><code>    <span class="token selector">body</span><span class="token punctuation">{</span>
+        <span class="token property">line-height</span><span class="token punctuation">:</span>1.5<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>sass 的默认变量一般是用来设置默认值，然后根据需求来覆盖的，覆盖的方式也很简单，只需要在默认变量之前重新声明下变量即可。</p><pre class="language-scss"><code>	<span class="token property"><span class="token variable">$baseLineHeight</span></span><span class="token punctuation">:</span> 2<span class="token punctuation">;</span>
+	<span class="token property"><span class="token variable">$baseLineHeight</span></span><span class="token punctuation">:</span> 1.5 <span class="token statement keyword">!default</span><span class="token punctuation">;</span>
+	<span class="token selector">body</span><span class="token punctuation">{</span>
+	    <span class="token property">line-height</span><span class="token punctuation">:</span> <span class="token variable">$baseLineHeight</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+</code></pre><p>编译后的css代码：</p><pre class="language-css"><code>	<span class="token selector">body</span><span class="token punctuation">{</span>
+	    <span class="token property">line-height</span><span class="token punctuation">:</span>2<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+</code></pre><p>可以看出现在编译后的 line-height 为 2，而不是我们默认的 1.5。默认变量的价值在进行组件化开发的时候会非常有用。</p></li></ol><h2 id="sass-局部变量和全局变量"><a href="#sass-局部变量和全局变量" aria-hidden="true" class="header-anchor">#</a> [Sass]局部变量和全局变量</h2><p>Sass 中变量的作用域在过去几年已经发生了一些改变。直到最近，规则集和其他范围内声明变量的作用域才默认为本地。如果已经存在同名的全局变量，从 3.4 版本开始，Sass 已经可以正确处理作用域的概念，并通过创建一个新的局部变量来代替。</p><p>先来看一下代码例子：</p><pre class="language-scss"><code>    <span class="token property"><span class="token variable">$color</span></span><span class="token punctuation">:</span> orange <span class="token statement keyword">!default</span><span class="token punctuation">;</span><span class="token comment">//定义全局变量(在选择器、函数、混合宏...的外面定义的变量为全局变量)</span>
+    <span class="token selector">.block </span><span class="token punctuation">{</span>
+      <span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">$color</span><span class="token punctuation">;</span><span class="token comment">//调用全局变量</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">em </span><span class="token punctuation">{</span>
+      <span class="token property"><span class="token variable">$color</span></span><span class="token punctuation">:</span> red<span class="token punctuation">;</span><span class="token comment">//定义局部变量</span>
+      <span class="token selector">a </span><span class="token punctuation">{</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">$color</span><span class="token punctuation">;</span><span class="token comment">//调用局部变量</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">span </span><span class="token punctuation">{</span>
+      <span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">$color</span><span class="token punctuation">;</span><span class="token comment">//调用全局变量</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>css 的结果：</p><pre class="language-css"><code><span class="token selector">.block</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> orange<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">em a</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">span</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> orange<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>上面的示例演示可以得知，在元素内部定义的变量不会影响其他元素。如此可以简单的理解成，全局变量就是定义在元素外面的变量，如下代码：</p><pre><code>$color:orange !default;
+</code></pre><p>$color 就是一个全局变量，而定义在元素内部的变量，比如 $color:red; 是一个局部变量。</p><p>除此之外，Sass 现在还提供一个 !global 参数。!global 和 !default 对于定义变量都是很有帮助的。我们之后将会详细介绍这两个参数的使用以及其功能。</p><h2 id="全局变量的影子"><a href="#全局变量的影子" aria-hidden="true" class="header-anchor">#</a> 全局变量的影子</h2><p>当在局部范围（选择器内、函数内、混合宏内...）声明一个已经存在于全局范围内的变量时，局部变量就成为了全局变量的影子。基本上，局部变量只会在局部范围内覆盖全局变量。</p><p>上面例子中的 em 选择器内的变量 $color 就是一个全局变量的影子。</p><pre class="language-scss"><code>    <span class="token property"><span class="token variable">$color</span></span><span class="token punctuation">:</span> orange <span class="token statement keyword">!default</span><span class="token punctuation">;</span><span class="token comment">//定义全局变量</span>
+    <span class="token selector">.block </span><span class="token punctuation">{</span>
+      <span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">$color</span><span class="token punctuation">;</span><span class="token comment">//调用全局变量</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">em </span><span class="token punctuation">{</span>
+      <span class="token property"><span class="token variable">$color</span></span><span class="token punctuation">:</span> red<span class="token punctuation">;</span><span class="token comment">//定义局部变量（全局变量 $color 的影子）</span>
+      <span class="token selector">a </span><span class="token punctuation">{</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">$color</span><span class="token punctuation">;</span><span class="token comment">//调用局部变量</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre><h2 id="什么时候声明变量？"><a href="#什么时候声明变量？" aria-hidden="true" class="header-anchor">#</a> 什么时候声明变量？</h2><p>建议：创建变量只适用于感觉确有必要的情况下。不要为了某些hack行为而声明新变量，这丝毫没有作用。只有满足所有下述标准时方可创建新变量：</p><ul><li>该值至少重复出现了两次(有必要提取出来)；</li><li>该值至少可能会被更新一次；</li><li>该值所有的表现都与变量有关（非巧合）。</li></ul><p>基本上，没有理由声明一个永远不需要更新或者只在单一地方使用变量。</p><p><span style="color:darkred">温馨小提示：您在学习 sass 时，除了在我们网页上可以做练习，还有一个便利在线编辑器网址如下：http://sassmeister.com/</span></p><h2 id="sass-嵌套"><a href="#sass-嵌套" aria-hidden="true" class="header-anchor">#</a> [Sass]嵌套</h2><p>Sass 中还提供了选择器嵌套功能，但这也并不意味着你在 Sass 中的嵌套是无节制的，因为你嵌套的层级越深，编译出来的 CSS 代码的选择器层级将越深，这往往是大家不愿意看到的一点。这个特性现在正被众多开发者滥用。</p><p>选择器嵌套为样式表的作者提供了一个通过局部选择器相互嵌套实现全局选择的方法，Sass 的嵌套分为三种：</p><ul><li>选择器嵌套</li><li>属性嵌套</li><li>伪类嵌套</li></ul><h3 id="选择器嵌套"><a href="#选择器嵌套" aria-hidden="true" class="header-anchor">#</a> 选择器嵌套</h3><p>假设我们有一段这样的结构：</p><pre class="language-html"><code>    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>nav</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span>“##”</span><span class="token punctuation">&gt;</span></span>Home<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span>“##”</span><span class="token punctuation">&gt;</span></span>About<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+        <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span>“##”</span><span class="token punctuation">&gt;</span></span>Blog<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>nav</span><span class="token punctuation">&gt;</span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>header</span><span class="token punctuation">&gt;</span></span>
+</code></pre><p>想选中 header 中的 a 标签，在写 CSS 会这样写：</p><pre class="language-css"><code>    <span class="token selector">nav a</span> <span class="token punctuation">{</span>
+      <span class="token property">color</span><span class="token punctuation">:</span>red<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token selector">header nav a</span> <span class="token punctuation">{</span>
+      <span class="token property">color</span><span class="token punctuation">:</span>green<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>那么在 Sass 中，就可以使用选择器的嵌套来实现：</p><pre class="language-scss"><code>    <span class="token selector">nav </span><span class="token punctuation">{</span>
+      <span class="token selector">a </span><span class="token punctuation">{</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+        <span class="token selector">header <span class="token parent important">&amp;</span> </span><span class="token punctuation">{</span>
+          <span class="token property">color</span><span class="token punctuation">:</span>green<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+      <span class="token punctuation">}</span>  
+    <span class="token punctuation">}</span>
+</code></pre><p><span style="color:darkred">注：&amp;是父选择器的标识符</span></p><h3 id="属性嵌套"><a href="#属性嵌套" aria-hidden="true" class="header-anchor">#</a> 属性嵌套</h3><p>Sass 中还提供属性嵌套，CSS 有一些属性前缀相同，只是后缀不一样，比如：border-top/border-right，与这个类似的还有 margin、padding、font 等属性。假设你的样式中用到了：</p><pre class="language-css"><code>    <span class="token selector">.box</span> <span class="token punctuation">{</span>
+        <span class="token property">border-top</span><span class="token punctuation">:</span> 1px solid red<span class="token punctuation">;</span>
+        <span class="token property">border-bottom</span><span class="token punctuation">:</span> 1px solid green<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>在 Sass 中我们可以这样写：</p><pre class="language-scss"><code>    <span class="token selector">.box </span><span class="token punctuation">{</span>
+      <span class="token selector">border: </span><span class="token punctuation">{</span>
+       <span class="token property">top</span><span class="token punctuation">:</span> 1px solid red<span class="token punctuation">;</span>
+       <span class="token property">bottom</span><span class="token punctuation">:</span> 1px solid green<span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre><h3 id="伪类嵌套"><a href="#伪类嵌套" aria-hidden="true" class="header-anchor">#</a> 伪类嵌套</h3><p>其实伪类嵌套和属性嵌套非常类似，只不过他需要借助<code>&amp;</code>符号一起配合使用。我们就拿经典的“clearfix”为例吧：</p><pre class="language-scss"><code>    <span class="token selector">.clearfix</span><span class="token punctuation">{</span>
+    	<span class="token selector"><span class="token parent important">&amp;</span>:before,
+    	<span class="token parent important">&amp;</span>:after </span><span class="token punctuation">{</span>
+    	    <span class="token property">content</span><span class="token punctuation">:</span><span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+    	    <span class="token property">display</span><span class="token punctuation">:</span> table<span class="token punctuation">;</span>
+    	<span class="token punctuation">}</span>
+
+    	<span class="token selector"><span class="token parent important">&amp;</span>:after </span><span class="token punctuation">{</span>
+    	    <span class="token property">clear</span><span class="token punctuation">:</span>both<span class="token punctuation">;</span>
+    	    <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+    	<span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>编译出来的 CSS：</p><pre class="language-css"><code>    <span class="token selector">clearfix:before, .clearfix:after</span> <span class="token punctuation">{</span>
+      <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+      <span class="token property">display</span><span class="token punctuation">:</span> table<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.clearfix:after</span> <span class="token punctuation">{</span>
+      <span class="token property">clear</span><span class="token punctuation">:</span> both<span class="token punctuation">;</span>
+      <span class="token property">overflow</span><span class="token punctuation">:</span> hidden<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><h3 id="避免选择器嵌套："><a href="#避免选择器嵌套：" aria-hidden="true" class="header-anchor">#</a> 避免选择器嵌套：</h3><ul><li>选择器嵌套最大的问题是将使最终的代码难以阅读。开发者需要花费巨大精力计算不同缩进级别下的选择器具体的表现效果。</li><li>选择器越具体则声明语句越冗长，而且对最近选择器的引用(&amp;)也越频繁。在某些时候，出现混淆选择器路径和探索下一级选择器的错误率很高，这非常不值得。</li></ul><p>为了防止此类情况，我们应该尽可能避免选择器嵌套。然而，显然只有少数情况适应这一措施。</p><h2 id="sass-混合宏"><a href="#sass-混合宏" aria-hidden="true" class="header-anchor">#</a> [Sass]混合宏</h2><ul><li>声明混合宏</li><li>调用混合宏</li><li>混合宏的参数</li></ul><h3 id="声明混合宏"><a href="#声明混合宏" aria-hidden="true" class="header-anchor">#</a> 声明混合宏</h3><p><b>不带参数混合宏：</b></p><p>在 Sass 中，使用**<code>@mixin</code>**来声明一个混合宏。如：</p><pre class="language-scss"><code>    <span class="token keyword">@mixin</span> <span class="token selector">border-radius</span><span class="token punctuation">{</span>
+        <span class="token property">border-radius</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>其中 @mixin 是用来声明混合宏的关键词；border-radius 是混合宏的名称；大括号里面是复用的样式代码。</p><p><b>带参数混合宏：</b></p><p>除了声明一个不带参数的混合宏之外，还可以在定义混合宏时带有参数，如：</p><pre class="language-scss"><code>    <span class="token keyword">@mixin</span> <span class="token function">border-radius</span><span class="token punctuation">(</span><span class="token property"><span class="token variable">$radius</span></span><span class="token punctuation">:</span>5px<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token variable">$radius</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p><b>复杂的混合宏：</b></p><p>上面是一个简单的定义混合宏的方法，当然， Sass 中的混合宏还提供更为复杂的，你可以在大括号里面写上带有逻辑关系（如：@if...@else),如：</p><pre class="language-scss"><code>    <span class="token keyword">@mixin</span> <span class="token function">box-shadow</span><span class="token punctuation">(</span><span class="token variable">$shadow</span>...<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">@if</span> <span class="token function">length</span><span class="token punctuation">(</span><span class="token variable">$shadow</span><span class="token punctuation">)</span> <span class="token selector">&gt;= 1 </span><span class="token punctuation">{</span>
+            <span class="token keyword">@include</span> <span class="token function">prefixer</span><span class="token punctuation">(</span>box-shadow, <span class="token variable">$shadow</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span> <span class="token keyword">@else</span><span class="token punctuation">{</span>
+            <span class="token property"><span class="token variable">$shadow</span></span><span class="token punctuation">:</span>0 0 4px <span class="token function">rgba</span><span class="token punctuation">(</span>0,0,0,.3<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">@include</span> <span class="token function">prefixer</span><span class="token punctuation">(</span>box-shadow, <span class="token variable">$shadow</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>这个 box-shadow 的混合宏，带有多个参数，这个时候可以使用“ … ”来替代。
+简单的解释一下，当 $shadow 的参数数量值大于或等于“ 1 ”时，表示有多个阴影值，反之调用默认的参数值“ 0 0 4px rgba(0,0,0,.3) ”。</p><h3 id="调用混合宏"><a href="#调用混合宏" aria-hidden="true" class="header-anchor">#</a> 调用混合宏</h3><p>在 Sass 中通过 @mixin 关键词声明了一个混合宏，在实际调用中，可以用关键词“@include”来调用声明好的混合宏。</p><pre class="language-scss"><code>    <span class="token keyword">@mixin</span> <span class="token selector">border-radius</span><span class="token punctuation">{</span>
+        <span class="token property">border-radius</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">button </span><span class="token punctuation">{</span>
+        <span class="token keyword">@include</span> border-radius<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>编译出来的 CSS:</p><pre class="language-css"><code>    <span class="token selector">button</span> <span class="token punctuation">{</span>
+      <span class="token property">border-radius</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><h3 id="sass-混合宏的参数"><a href="#sass-混合宏的参数" aria-hidden="true" class="header-anchor">#</a> [Sass]混合宏的参数</h3><h4 id="传一个不带值的参数"><a href="#传一个不带值的参数" aria-hidden="true" class="header-anchor">#</a> 传一个不带值的参数</h4><pre class="language-scss"><code>    <span class="token keyword">@mixin</span> <span class="token function">border-radius</span><span class="token punctuation">(</span><span class="token variable">$radius</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token variable">$radius</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">//调用</span>
+    <span class="token selector">.box </span><span class="token punctuation">{</span>
+        <span class="token keyword">@include</span> <span class="token function">border-radius</span><span class="token punctuation">(</span>3px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><h4 id="传一个带值的参数"><a href="#传一个带值的参数" aria-hidden="true" class="header-anchor">#</a> 传一个带值的参数</h4><pre class="language-scss"><code>    <span class="token comment">//在混合宏“border-radius”传了一个参数“$radius”，而且给这个参数赋予了一个默认值“3px”。</span>
+    <span class="token keyword">@mixin</span> <span class="token function">border-radius</span><span class="token punctuation">(</span><span class="token property"><span class="token variable">$radius</span></span><span class="token punctuation">:</span>3px<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token property">border-radius</span><span class="token punctuation">:</span> <span class="token variable">$radius</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>在调用类似这样的混合宏时，会多有一个机会，假设你的页面中的圆角很多地方都是“3px”的圆角，那么这个时候只需要调用默认的混合宏“border-radius”:</p><pre class="language-scss"><code>    <span class="token selector">.btn </span><span class="token punctuation">{</span>
+        <span class="token keyword">@include</span> border-radius<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>编译出来的 CSS:</p><pre class="language-css"><code>    <span class="token selector">.btn</span> <span class="token punctuation">{</span>
+        <span class="token property">border-radius</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>但有的时候，页面中有些元素的圆角值不一样，那么可以随机给混合宏传值，如：</p><pre class="language-scss"><code>    <span class="token selector">.box </span><span class="token punctuation">{</span>
+        <span class="token keyword">@include</span> <span class="token function">border-radius</span><span class="token punctuation">(</span>50%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>编译出来的 CSS:</p><pre class="language-css"><code>    <span class="token selector">.box</span> <span class="token punctuation">{</span>
+      <span class="token property">-webkit-border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+      <span class="token property">border-radius</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><h4 id="传多个参数"><a href="#传多个参数" aria-hidden="true" class="header-anchor">#</a> 传多个参数</h4><p>Sass 混合宏除了能传一个参数之外，还可以传多个参数，如：</p><pre class="language-scss"><code>    <span class="token keyword">@mixin</span> <span class="token function">center</span><span class="token punctuation">(</span><span class="token variable">$width</span>,<span class="token variable">$height</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    	<span class="token property">width</span><span class="token punctuation">:</span> <span class="token variable">$width</span><span class="token punctuation">;</span>
+    	<span class="token property">height</span><span class="token punctuation">:</span> <span class="token variable">$height</span><span class="token punctuation">;</span>
+    	<span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    	<span class="token property">top</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    	<span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    	<span class="token property">margin-top</span><span class="token punctuation">:</span> <span class="token function">-</span><span class="token punctuation">(</span><span class="token variable">$height</span><span class="token punctuation">)</span> <span class="token operator">/</span> 2<span class="token punctuation">;</span>
+    	<span class="token property">margin-left</span><span class="token punctuation">:</span> <span class="token function">-</span><span class="token punctuation">(</span><span class="token variable">$width</span><span class="token punctuation">)</span> <span class="token operator">/</span> 2<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>在混合宏“center”就传了多个参数。在实际调用和其调用其他混合宏是一样的：</p><pre class="language-scss"><code>    <span class="token selector">.box-center </span><span class="token punctuation">{</span>
+    	<span class="token keyword">@include</span> <span class="token function">center</span><span class="token punctuation">(</span>500px,300px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>编译出来 CSS:</p><pre class="language-css"><code>    <span class="token selector">.box-center</span> <span class="token punctuation">{</span>
+    	<span class="token property">width</span><span class="token punctuation">:</span> 500px<span class="token punctuation">;</span>
+    	<span class="token property">height</span><span class="token punctuation">:</span> 300px<span class="token punctuation">;</span>
+    	<span class="token property">position</span><span class="token punctuation">:</span> absolute<span class="token punctuation">;</span>
+    	<span class="token property">top</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    	<span class="token property">left</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+    	<span class="token property">margin-top</span><span class="token punctuation">:</span> -150px<span class="token punctuation">;</span>
+    	<span class="token property">margin-left</span><span class="token punctuation">:</span> -250px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>有一个特别的参数“…”。当混合宏传的参数过多之时，可以使用参数来替代，如：</p><pre class="language-scss"><code>    <span class="token keyword">@mixin</span> <span class="token function">box-shadow</span><span class="token punctuation">(</span><span class="token variable">$shadows</span>...<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">@if</span> <span class="token function">length</span><span class="token punctuation">(</span><span class="token variable">$shadows</span><span class="token punctuation">)</span> <span class="token selector">&gt;= 1 </span><span class="token punctuation">{</span>
+            <span class="token property">box-shadow</span><span class="token punctuation">:</span> <span class="token variable">$shadows</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">@else</span> <span class="token punctuation">{</span>
+            <span class="token property"><span class="token variable">$shadows</span></span><span class="token punctuation">:</span> 0 0 2px <span class="token function">rgba</span><span class="token punctuation">(</span>#000,.25<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token property">box-shadow</span><span class="token punctuation">:</span> <span class="token variable">$shadow</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>在实际调用中：</p><pre class="language-scss"><code>    <span class="token selector">.box </span><span class="token punctuation">{</span>
+      <span class="token keyword">@include</span> <span class="token function">box-shadow</span><span class="token punctuation">(</span>0 0 1px <span class="token function">rgba</span><span class="token punctuation">(</span>#000,.5<span class="token punctuation">)</span>,0 0 2px <span class="token function">rgba</span><span class="token punctuation">(</span>#000,.2<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>编译出来的 CSS:</p><pre class="language-css"><code>    <span class="token selector">.box</span> <span class="token punctuation">{</span>
+        <span class="token property">box-shadow</span><span class="token punctuation">:</span> 0 0 1px <span class="token function">rgba</span><span class="token punctuation">(</span>0, 0, 0, 0.5<span class="token punctuation">)</span>, 0 0 2px <span class="token function">rgba</span><span class="token punctuation">(</span>0, 0, 0, 0.2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><h3 id="混合宏的不足"><a href="#混合宏的不足" aria-hidden="true" class="header-anchor">#</a> 混合宏的不足</h3><p>混合宏在实际编码中给我们带来很多方便之处，特别是对于复用重复代码块。但其最大的不足之处是会生成冗余的代码块(增大css文件大小)。比如在不同的地方调用一个相同的混合宏时。如：</p><pre class="language-scss"><code>    <span class="token keyword">@mixin</span> <span class="token selector">border-radius</span><span class="token punctuation">{</span>
+        <span class="token property">border-radius</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.box </span><span class="token punctuation">{</span>
+        <span class="token keyword">@include</span> border-radius<span class="token punctuation">;</span>
+        <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.btn </span><span class="token punctuation">{</span>
+        <span class="token keyword">@include</span> border-radius<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>示例在“.box”和“.btn”中都调用了定义好的“border-radius”混合宏。先来看编译出来的 CSS：</p><pre class="language-css"><code>    <span class="token selector">.box</span> <span class="token punctuation">{</span>
+        <span class="token property">border-radius</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+        <span class="token property">margin-bottom</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.btn</span> <span class="token punctuation">{</span>
+        <span class="token property">border-radius</span><span class="token punctuation">:</span> 3px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>上例明显可以看出，Sass 在调用相同的混合宏时，并不能智能的将相同的样式代码块合并在一起。这也是 Sass 的混合宏最不足之处。</p><h2 id="sass-扩展-继承"><a href="#sass-扩展-继承" aria-hidden="true" class="header-anchor">#</a> [Sass]扩展/继承</h2><p>在 Sass 中是通过关键词 “@extend”来继承已存在的类样式块，从而实现代码的继承。如下所示：</p><pre class="language-scss"><code>    <span class="token selector">.btn </span><span class="token punctuation">{</span>
+        <span class="token property">border</span><span class="token punctuation">:</span> 1px solid #ccc<span class="token punctuation">;</span>
+        <span class="token property">padding</span><span class="token punctuation">:</span> 6px 10px<span class="token punctuation">;</span>
+        <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token selector">.btn-primary </span><span class="token punctuation">{</span>
+        <span class="token property">background-color</span><span class="token punctuation">:</span> #f36<span class="token punctuation">;</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+        <span class="token keyword">@extend</span> .btn<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token selector">.btn-second </span><span class="token punctuation">{</span>
+        <span class="token property">background-color</span><span class="token punctuation">:</span> orange<span class="token punctuation">;</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+        <span class="token keyword">@extend</span> .btn<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>编译出来之后：</p><pre class="language-css"><code>    <span class="token selector">.btn, .btn-primary, .btn-second</span> <span class="token punctuation">{</span>
+        <span class="token property">border</span><span class="token punctuation">:</span> 1px solid #ccc<span class="token punctuation">;</span>
+        <span class="token property">padding</span><span class="token punctuation">:</span> 6px 10px<span class="token punctuation">;</span>
+        <span class="token property">font-size</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token selector">.btn-primary</span> <span class="token punctuation">{</span>
+        <span class="token property">background-color</span><span class="token punctuation">:</span> #f36<span class="token punctuation">;</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token selector">.btn-second</span> <span class="token punctuation">{</span>
+        <span class="token property">background-clor</span><span class="token punctuation">:</span> orange<span class="token punctuation">;</span>
+        <span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>从示例代码可以看出，在 Sass 中的继承，可以继承类样式块中所有样式代码，而且编译出来的 CSS 会将选择器合并在一起，形成组合选择器。</p><h2 id="sass-占位符"><a href="#sass-占位符" aria-hidden="true" class="header-anchor">#</a> [Sass]占位符 %</h2><p>% 声明的代码，如果不被 @extend 调用的话，不会产生任何代码。来看一个演示：</p><pre class="language-scss"><code>    <span class="token selector"><span class="token placeholder">%mt5</span> </span><span class="token punctuation">{</span>
+      <span class="token property">margin-top</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector"><span class="token placeholder">%pt5</span></span><span class="token punctuation">{</span>
+      <span class="token property">padding-top</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>这段代码没有被 @extend 调用，他并没有产生任何代码块，只是静静的躺在你的某个 SCSS 文件中。只有通过 @extend 调用才会产生代码：</p><pre class="language-scss"><code>    <span class="token selector">.btn </span><span class="token punctuation">{</span>
+      <span class="token keyword">@extend</span> <span class="token placeholder selector">%mt5</span><span class="token punctuation">;</span>
+      <span class="token keyword">@extend</span> <span class="token placeholder selector">%pt5</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token selector">.block </span><span class="token punctuation">{</span>
+      <span class="token keyword">@extend</span> <span class="token placeholder selector">%mt5</span><span class="token punctuation">;</span>
+      <span class="token selector">span </span><span class="token punctuation">{</span>
+        <span class="token keyword">@extend</span> <span class="token placeholder selector">%pt5</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>编译出来的 CSS</p><pre class="language-css"><code>    <span class="token selector">.btn, .block</span> <span class="token punctuation">{</span>
+      <span class="token property">margin-top</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token selector">.btn, .block span</span> <span class="token punctuation">{</span>
+      <span class="token property">padding-top</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>从编译出来的 CSS 代码可以看出，通过 @extend 调用的占位符，编译出来的代码会将相同的代码合并在一起。这也是我们希望看到的效果，也让你的代码变得更为干净。</p><h2 id="sass-混合宏-vs-继承-vs-占位符"><a href="#sass-混合宏-vs-继承-vs-占位符" aria-hidden="true" class="header-anchor">#</a> [Sass]混合宏 VS 继承 VS 占位符</h2><p>初学者都常常纠结于这个问题“什么时候用混合宏，什么时候用继承，什么时候使用占位符？”其实他们各有各的优点与缺点：</p><p><b>a) Sass 中的混合宏使用</b></p><ul><li><p>混合宏不会自动合并相同的样式代码，如果在样式文件中调用同一个混合宏，会产生多个对应的样式代码，造成代码的冗余，这也是 CSSer 无法忍受的一件事情。不过他并不是一无事处，他可以传参数。</p></li><li><p>个人建议：如果你的代码块中涉及到变量，建议使用混合宏来创建相同的代码块。</p></li></ul><p><b>b) Sass 中继承</b></p><ul><li><p>使用继承后，编译出来的 CSS 会将使用继承的代码块合并到一起，通过组合选择器的方式向大家展现，比如 .mt, .block, .block span, .header。这样编译出来的代码相对于混合宏来说要干净的多，也是 CSSer 期望看到。但是他不能传变量参数。</p></li><li><p>个人建议：如果你的代码块不需要专任何变量参数，而且有一个基类已在文件中存在，那么建议使用 Sass 的继承。</p></li></ul><p><b>c) 占位符</b></p><ul><li>编译出来的 CSS 代码和使用继承基本上是相同，只是不会在代码中生成占位符 mt 的选择器。那么占位符和继承的主要区别的，“占位符是独立定义，不调用的时候是不会在 CSS 中产生任何代码；继承是首先有一个基类存在，不管调用与不调用，基类的样式都将会出现在编译出来的 CSS 代码中。”</li></ul><h3 id="sass-插值"><a href="#sass-插值" aria-hidden="true" class="header-anchor">#</a> [Sass]插值#{}</h3><pre class="language-scss"><code>    <span class="token property"><span class="token variable">$properties</span></span><span class="token punctuation">:</span> <span class="token punctuation">(</span>margin, padding<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">@mixin</span> <span class="token function">set-value</span><span class="token punctuation">(</span><span class="token variable">$side</span>, <span class="token variable">$value</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">@each</span> <span class="token selector"><span class="token variable">$prop</span> in <span class="token variable">$properties</span> </span><span class="token punctuation">{</span>
+            <span class="token property"><span class="token variable">#{$prop}</span>-<span class="token variable">#{$side}</span></span><span class="token punctuation">:</span> <span class="token variable">$value</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.login-box </span><span class="token punctuation">{</span>
+        <span class="token keyword">@include</span> <span class="token function">set-value</span><span class="token punctuation">(</span>top, 14px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>编译成 CSS：</p><pre class="language-css"><code>    <span class="token selector">.login-box</span> <span class="token punctuation">{</span>
+        <span class="token property">margin-top</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+        <span class="token property">padding-top</span><span class="token punctuation">:</span> 14px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>这是 Sass 插值中一个简单的实例。当你想设置属性值的时候你可以使用字符串插入进来。另一个有用的用法是构建一个选择器。可以这样使用：</p><pre class="language-scss"><code>    <span class="token keyword">@mixin</span> <span class="token function">generate-sizes</span><span class="token punctuation">(</span><span class="token variable">$class</span>, <span class="token variable">$small</span>, <span class="token variable">$medium</span>, <span class="token variable">$big</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token selector">.<span class="token variable">#{$class}</span>-small </span><span class="token punctuation">{</span> <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token variable">$small</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+        <span class="token selector">.<span class="token variable">#{$class}</span>-medium </span><span class="token punctuation">{</span> <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token variable">$medium</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+        <span class="token selector">.<span class="token variable">#{$class}</span>-big </span><span class="token punctuation">{</span> <span class="token property">font-size</span><span class="token punctuation">:</span> <span class="token variable">$big</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">@include</span> <span class="token function">generate-sizes</span><span class="token punctuation">(</span><span class="token string">&quot;header-text&quot;</span>, 12px, 20px, 40px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>编译出来的 CSS:</p><pre class="language-css"><code>    <span class="token selector">.header-text-small</span> <span class="token punctuation">{</span> <span class="token property">font-size</span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token selector">.header-text-medium</span> <span class="token punctuation">{</span> <span class="token property">font-size</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+    <span class="token selector">.header-text-big</span> <span class="token punctuation">{</span> <span class="token property">font-size</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span> <span class="token punctuation">}</span>
+</code></pre><p>一旦你发现这一点，你就会想到超级酷的 mixins，用来生成代码或者生成另一个 mixins。然而，这并不完全是可能的。第一个限制，这很可能会删除用于 Sass 变量的插值。</p><pre class="language-scss"><code>    <span class="token property"><span class="token variable">$margin-big</span></span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
+    <span class="token property"><span class="token variable">$margin-medium</span></span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+    <span class="token property"><span class="token variable">$margin-small</span></span><span class="token punctuation">:</span> 12px<span class="token punctuation">;</span>
+
+    <span class="token keyword">@mixin</span> <span class="token function">set-value</span><span class="token punctuation">(</span><span class="token variable">$size</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token property">margin-top</span><span class="token punctuation">:</span> <span class="token variable">$margin-</span><span class="token variable">#{$size}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.login-box </span><span class="token punctuation">{</span>
+        <span class="token keyword">@include</span> <span class="token function">set-value</span><span class="token punctuation">(</span>big<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>上面的 Sass 代码编译出来，你会得到下面的信息：</p><pre class="language-text"><code>    error style.scss (Line 5: Undefined variable: “$margin-&quot;.)
+</code></pre><p>所以，#{}语法并不是随处可用，你也不能在 mixin 中调用：</p><pre class="language-scss"><code>    <span class="token keyword">@mixin</span> <span class="token selector">updated-status </span><span class="token punctuation">{</span>
+        <span class="token property">margin-top</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> #F00<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token property"><span class="token variable">$flag</span></span><span class="token punctuation">:</span> <span class="token string">&quot;status&quot;</span><span class="token punctuation">;</span>
+    <span class="token selector">.navigation </span><span class="token punctuation">{</span>
+        <span class="token keyword">@include</span> updated-<span class="token variable">#{$flag}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>上面的代码在编译成 CSS 时同样会报错：</p><pre class="language-text"><code>    error style.scss (Line 7: Invalid CSS after &quot;...nclude updated-&quot;: expected &quot;}&quot;, was &quot;#{$flag};&quot;)
+</code></pre><p>幸运的是，可以使用 @extend 中使用插值。例如：</p><pre class="language-scss"><code>    <span class="token selector"><span class="token placeholder">%updated-status</span> </span><span class="token punctuation">{</span>
+        <span class="token property">margin-top</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> #F00<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.selected-status </span><span class="token punctuation">{</span>
+        <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token property"><span class="token variable">$flag</span></span><span class="token punctuation">:</span> <span class="token string">&quot;status&quot;</span><span class="token punctuation">;</span>
+    <span class="token selector">.navigation </span><span class="token punctuation">{</span>
+        <span class="token keyword">@extend</span> <span class="token placeholder selector">%updated-</span><span class="token variable">#{$flag}</span><span class="token punctuation">;</span>
+        <span class="token keyword">@extend</span> .selected-<span class="token variable">#{$flag}</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><p>上面的 Sass 代码是可以运行的，可以动态的插入 .class 和 %placeholder。当然他们不能接受像 mixin 这样的参数，上面的代码编译出来的 CSS:</p><pre class="language-css"><code>    <span class="token selector">.navigation</span> <span class="token punctuation">{</span>
+        <span class="token property">margin-top</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> #F00<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token selector">.selected-status, .navigation</span> <span class="token punctuation">{</span>
+        <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+</code></pre><h3 id="sass-注释"><a href="#sass-注释" aria-hidden="true" class="header-anchor">#</a> [Sass]注释</h3><ul><li>//    单行注释，标准编译和压缩编译后不会保留</li><li>/* */ 多行注释 标准编译后会保留注释 压缩编译后不会保留</li></ul><h3 id="sass-数据类型"><a href="#sass-数据类型" aria-hidden="true" class="header-anchor">#</a> [Sass]数据类型</h3><p>Sass 和 JavaScript 语言类似，也具有自己的数据类型，在 Sass 中包含以下几种数据类型：</p><ul><li>数字: 如，1、 2、 13、 10px；</li><li>字符串：有引号字符串或无引号字符串，如，&quot;foo&quot;、 'bar'、 baz；</li><li>颜色：如，blue、 #04a3f9、 rgba(255,0,0,0.5)；</li><li>布尔型：如，true、 false；</li><li>空值：如，null；</li><li>值列表：用空格或者逗号分开，如，1.5em 1em 0 2em 、 Helvetica, Arial, sans-serif。</li></ul><p>SassScript 也支持其他 CSS 属性值（property value），比如 Unicode 范围，或 !important 声明。然而，Sass 不会特殊对待这些属性值，一律视为无引号字符串 (unquoted strings)。</p><p>在编译 CSS 文件时不会改变其类型。只有一种情况例外，使用 #{ }插值语句 (interpolation) 时，有引号字符串将被编译为无引号字符串，这样方便了在混合指令 (mixin) 中引用选择器名。</p><p>需要注意的是：当 deprecated = property syntax 时 （暂时不理解是怎样的情况），所有的字符串都将被编译为无引号字符串，不论是否使用了引号。</p><h3 id="sass-列表函数（sass-list-functions）："><a href="#sass-列表函数（sass-list-functions）：" aria-hidden="true" class="header-anchor">#</a> Sass 列表函数（Sass list functions）：</h3><ul><li>nth 函数（nth function） 可以直接访问值列表中的某一项；</li><li>join 函数（join function） 可以将多个值列表连结在一起；</li><li>append 函数（append function） 可以在值列表中添加值；</li><li>@each 规则（@each rule） 则能够给值列表中的每个项目添加样式。</li><li>@for 循环遍历</li><li>@while while循环</li></ul><pre class="language-scss"><code><span class="token comment">// 12.@for 有序循环语句</span>
+<span class="token property"><span class="token variable">$if_color</span></span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$columns</span></span><span class="token punctuation">:</span> 6<span class="token punctuation">;</span>
+
+<span class="token selector">section.s12 </span><span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token variable">$if_color</span><span class="token punctuation">;</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token selector">div </span><span class="token punctuation">{</span>
+    <span class="token comment">// [through] 1-6</span>
+    <span class="token keyword">@for</span> <span class="token variable">$i</span> <span class="token keyword">from</span> 1 <span class="token keyword">through</span> <span class="token selector"><span class="token variable">$columns</span> </span><span class="token punctuation">{</span>
+      <span class="token selector">.col-through-<span class="token variable">#{$i}</span> </span><span class="token punctuation">{</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 100% <span class="token operator">/</span> <span class="token variable">$columns</span> <span class="token operator">*</span> <span class="token variable">$i</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// [to] 1-5</span>
+    <span class="token keyword">@for</span> <span class="token variable">$i</span> <span class="token keyword">from</span> <span class="token selector">1 to <span class="token variable">$columns</span> </span><span class="token punctuation">{</span>
+      <span class="token selector">.col-to-<span class="token variable">#{$i}</span> </span><span class="token punctuation">{</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 100% <span class="token operator">/</span> <span class="token variable">$columns</span> <span class="token operator">*</span> <span class="token variable">$i</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><pre class="language-scss"><code><span class="token comment">// 13.@each 无序循环语句</span>
+<span class="token property"><span class="token variable">$if_color</span></span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>0, 153, 255<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$icons</span></span><span class="token punctuation">:</span> success info error<span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$each_width</span></span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+
+<span class="token selector">section.s13 </span><span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token variable">$if_color</span><span class="token punctuation">;</span>
+  <span class="token selector">div </span><span class="token punctuation">{</span>
+    <span class="token keyword">@each</span> <span class="token selector"><span class="token variable">$icon</span> in <span class="token variable">$icons</span> </span><span class="token punctuation">{</span>
+      <span class="token selector">.icon-<span class="token variable">#{$icon}</span> </span><span class="token punctuation">{</span>
+        <span class="token property">height</span><span class="token punctuation">:</span> <span class="token variable">$each_width</span><span class="token punctuation">;</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> <span class="token variable">$each_width</span><span class="token punctuation">;</span>
+        <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+        <span class="token property">background</span><span class="token punctuation">:</span> <span class="token url">url</span><span class="token punctuation">(</span><span class="token string">&quot;../img/#{$icon}.png&quot;</span><span class="token punctuation">)</span> no-repeat 0 0<span class="token punctuation">;</span>
+        <span class="token property">background-size</span><span class="token punctuation">:</span> <span class="token variable">$each_width</span> <span class="token variable">$each_width</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><pre class="language-scss"><code><span class="token comment">// 14.while 条件循环</span>
+<span class="token property"><span class="token variable">$while_color</span></span><span class="token punctuation">:</span> <span class="token function">rgb</span><span class="token punctuation">(</span>212, 0, 255<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token property"><span class="token variable">$item</span></span><span class="token punctuation">:</span> 6<span class="token punctuation">;</span>
+<span class="token selector">section.s14 </span><span class="token punctuation">{</span>
+  <span class="token property">height</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> <span class="token variable">$while_color</span><span class="token punctuation">;</span>
+  <span class="token selector">div </span><span class="token punctuation">{</span>
+    <span class="token keyword">@while</span> <span class="token selector"><span class="token variable">$item</span> &gt; 0 </span><span class="token punctuation">{</span>
+      <span class="token selector">.item-<span class="token variable">#{$item}</span> </span><span class="token punctuation">{</span>
+        <span class="token property">width</span><span class="token punctuation">:</span> 5px <span class="token operator">*</span> <span class="token variable">$item</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+      <span class="token property"><span class="token variable">$item</span></span><span class="token punctuation">:</span> <span class="token variable">$item</span> <span class="token operator">-</span> 2<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><!----><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/styleProcess/sass/" class="prev router-link-active">
+          sass了解
+        </a></span><span class="next"><a href="/styleProcess/sass/diff.html">
+          sass和scss差异
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/styleProcess/assets/js/7.93e00f2e.js" defer></script><script src="/styleProcess/assets/js/app.e3b621a4.js" defer></script>
+  </body>
+</html>

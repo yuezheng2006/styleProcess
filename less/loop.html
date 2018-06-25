@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>css预处理器 | 循环</title>
+    <meta name="description" content="css预处理语言 使用总结">
+    <link rel="icon" href="/styleProcess/logo.png">
+  <link rel="manifest" href="/styleProcess/manifest.json">
+    
+    <link rel="preload" href="/styleProcess/assets/css/18.styles.3e9f533d.css" as="style"><link rel="preload" href="/styleProcess/assets/js/app.e3b621a4.js" as="script"><link rel="preload" href="/styleProcess/assets/js/12.3ada07ed.js" as="script"><link rel="prefetch" href="/styleProcess/assets/js/10.185f2d56.js"><link rel="prefetch" href="/styleProcess/assets/js/1.625c0169.js"><link rel="prefetch" href="/styleProcess/assets/js/2.a8afffa5.js"><link rel="prefetch" href="/styleProcess/assets/js/3.09429867.js"><link rel="prefetch" href="/styleProcess/assets/js/4.dec1ca9b.js"><link rel="prefetch" href="/styleProcess/assets/js/5.10e73ff7.js"><link rel="prefetch" href="/styleProcess/assets/js/6.4543c32a.js"><link rel="prefetch" href="/styleProcess/assets/js/7.93e00f2e.js"><link rel="prefetch" href="/styleProcess/assets/js/8.0e7f02cd.js"><link rel="prefetch" href="/styleProcess/assets/js/9.d0f68f7e.js"><link rel="prefetch" href="/styleProcess/assets/js/0.8a921080.js"><link rel="prefetch" href="/styleProcess/assets/js/11.b1e4c8db.js"><link rel="prefetch" href="/styleProcess/assets/js/13.54014618.js"><link rel="prefetch" href="/styleProcess/assets/js/14.47e7d96b.js"><link rel="prefetch" href="/styleProcess/assets/js/15.0ae7a566.js"><link rel="prefetch" href="/styleProcess/assets/js/16.5d215985.js"><link rel="prefetch" href="/styleProcess/assets/js/17.f41f3037.js">
+    <link rel="stylesheet" href="/styleProcess/assets/css/18.styles.3e9f533d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/styleProcess/" class="home-link router-link-active"><!----><span class="site-name">
+      css预处理器
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>less语法总结</span><!----></p><ul class="sidebar-group-items"><li><a href="/styleProcess/less/" class="sidebar-link">less了解</a></li><li><a href="/styleProcess/less/var.html" class="sidebar-link">变量</a></li><li><a href="/styleProcess/less/loop.html" class="active sidebar-link">循环</a></li><li><a href="/styleProcess/less/mixin.html" class="sidebar-link">混入</a></li><li><a href="/styleProcess/less/parent.html" class="sidebar-link">父选择</a></li><li><a href="/styleProcess/less/import.html" class="sidebar-link">引用</a></li><li><a href="/styleProcess/less/combine.html" class="sidebar-link">合并</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>sass语法使用</span><span class="arrow right"></span></p><!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>stylus语法使用</span><span class="arrow right"></span></p><!----></div></li></ul></div><div class="page"><div class="content"><h1 id="循环"><a href="#循环" aria-hidden="true" class="header-anchor">#</a> 循环</h1><p>Less混合器可递归调用。再结合限制条件和模式匹配，可实现不同的循环结构：</p><pre class="language-less"><code><span class="token selector">.loop(<span class="token variable">@counter</span>) when (<span class="token variable">@counter</span> &gt; 0)</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.loop</span><span class="token punctuation">(</span><span class="token variable">@counter</span> <span class="token operator">-</span> 1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>10px <span class="token operator">*</span> <span class="token variable">@counter</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">div</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.loop</span><span class="token punctuation">(</span>5<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 30px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
+  <span class="token property">width</span><span class="token punctuation">:</span> 50px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>再比如，生成栅格系统：</p><pre class="language-less"><code><span class="token selector">.generate-columns(<span class="token variable">@n</span>, <span class="token variable">@i</span>:1) when (<span class="token variable">@i</span> &lt;= <span class="token variable">@n</span>)</span> <span class="token punctuation">{</span>
+	<span class="token selector">.column-@{i}</span> <span class="token punctuation">{</span>
+		<span class="token property">width</span><span class="token punctuation">:</span> <span class="token variable">@i</span> <span class="token operator">/</span> <span class="token variable">@n</span> <span class="token operator">*</span> 100%<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	.<span class="token function">generate-columns</span><span class="token punctuation">(</span><span class="token variable">@n</span><span class="token punctuation">,</span> <span class="token variable">@i</span><span class="token operator">+</span>1<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><pre class="language-less"><code><span class="token comment">// 调用 n=4</span>
+.<span class="token function">generate-columns</span><span class="token punctuation">(</span>4<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.column-1</span> <span class="token punctuation">{</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> 25%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.column-2</span> <span class="token punctuation">{</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.column-3</span> <span class="token punctuation">{</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> 75%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.column-4</span> <span class="token punctuation">{</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><pre class="language-less"><code><span class="token comment">// 调用 n=2</span>
+.<span class="token function">generate-columns</span><span class="token punctuation">(</span>2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.column-1</span> <span class="token punctuation">{</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> 50%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.column-2</span> <span class="token punctuation">{</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> 100%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><!----><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/styleProcess/less/var.html" class="prev">
+          变量
+        </a></span><span class="next"><a href="/styleProcess/less/mixin.html">
+          混入
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/styleProcess/assets/js/12.3ada07ed.js" defer></script><script src="/styleProcess/assets/js/app.e3b621a4.js" defer></script>
+  </body>
+</html>

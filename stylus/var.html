@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>css预处理器 | 变量</title>
+    <meta name="description" content="css预处理语言 使用总结">
+    <link rel="icon" href="/styleProcess/logo.png">
+  <link rel="manifest" href="/styleProcess/manifest.json">
+    
+    <link rel="preload" href="/styleProcess/assets/css/18.styles.3e9f533d.css" as="style"><link rel="preload" href="/styleProcess/assets/js/app.e3b621a4.js" as="script"><link rel="preload" href="/styleProcess/assets/js/0.8a921080.js" as="script"><link rel="prefetch" href="/styleProcess/assets/js/10.185f2d56.js"><link rel="prefetch" href="/styleProcess/assets/js/1.625c0169.js"><link rel="prefetch" href="/styleProcess/assets/js/2.a8afffa5.js"><link rel="prefetch" href="/styleProcess/assets/js/3.09429867.js"><link rel="prefetch" href="/styleProcess/assets/js/4.dec1ca9b.js"><link rel="prefetch" href="/styleProcess/assets/js/5.10e73ff7.js"><link rel="prefetch" href="/styleProcess/assets/js/6.4543c32a.js"><link rel="prefetch" href="/styleProcess/assets/js/7.93e00f2e.js"><link rel="prefetch" href="/styleProcess/assets/js/8.0e7f02cd.js"><link rel="prefetch" href="/styleProcess/assets/js/9.d0f68f7e.js"><link rel="prefetch" href="/styleProcess/assets/js/11.b1e4c8db.js"><link rel="prefetch" href="/styleProcess/assets/js/12.3ada07ed.js"><link rel="prefetch" href="/styleProcess/assets/js/13.54014618.js"><link rel="prefetch" href="/styleProcess/assets/js/14.47e7d96b.js"><link rel="prefetch" href="/styleProcess/assets/js/15.0ae7a566.js"><link rel="prefetch" href="/styleProcess/assets/js/16.5d215985.js"><link rel="prefetch" href="/styleProcess/assets/js/17.f41f3037.js">
+    <link rel="stylesheet" href="/styleProcess/assets/css/18.styles.3e9f533d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/styleProcess/" class="home-link router-link-active"><!----><span class="site-name">
+      css预处理器
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>less语法总结</span><!----></p><ul class="sidebar-group-items"><li><a href="/styleProcess/less/" class="sidebar-link">less了解</a></li><li><a href="/styleProcess/less/var.html" class="sidebar-link">变量</a></li><li><a href="/styleProcess/less/loop.html" class="sidebar-link">循环</a></li><li><a href="/styleProcess/less/mixin.html" class="sidebar-link">混入</a></li><li><a href="/styleProcess/less/parent.html" class="sidebar-link">父选择</a></li><li><a href="/styleProcess/less/import.html" class="sidebar-link">引用</a></li><li><a href="/styleProcess/less/combine.html" class="sidebar-link">合并</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>sass语法使用</span><span class="arrow right"></span></p><!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>stylus语法使用</span><span class="arrow down"></span></p><ul class="sidebar-group-items"><li><a href="/styleProcess/stylus/" class="sidebar-link">stylus了解</a></li><li><a href="/styleProcess/stylus/var.html" class="active sidebar-link">变量</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/styleProcess/stylus/var.html#查找属性" class="sidebar-link">查找属性</a></li></ul></li><li><a href="/styleProcess/stylus/selector.html" class="sidebar-link">选择器</a></li><li><a href="/styleProcess/stylus/operator.html" class="sidebar-link">运算符</a></li><li><a href="/styleProcess/stylus/mixin.html" class="sidebar-link">混写</a></li><li><a href="/styleProcess/stylus/insert.html" class="sidebar-link">插入值</a></li></ul></div></li></ul></div><div class="page"><div class="content"><h1 id="变量"><a href="#变量" aria-hidden="true" class="header-anchor">#</a> 变量</h1><p>我们可能会定义一个变量，然后在样式中去使用它。</p><pre class="language-text"><code>font-size = 14px
+
+body
+    font font-siz Arial,sans-serif
+</code></pre><p>编译为:</p><pre class="language-css"><code><span class="token selector">body</span><span class="token punctuation">{</span>
+    font：14px Arial,sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>变量甚至可以组成表达式列表</p><pre class="language-text"><code>font-size = 14px
+font=font-size &quot;Lucida Grande&quot;,Arial
+
+body
+    font font,sans-serif
+</code></pre><p>编译为:</p><pre class="language-css"><code><span class="token selector">body</span><span class="token punctuation">{</span>
+    <span class="token property">font</span><span class="token punctuation">:</span>14px <span class="token string">&quot;Lucida Grande&quot;</span>,Arial,sans-serif<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>定义(变量名，函数等)可以包含<code>$</code>字符，如下面这个例子:</p><pre class="language-text"><code>$font-size = 14px
+body{
+    font:$font-size sans-serif;
+}
+</code></pre><h2 id="查找属性"><a href="#查找属性" aria-hidden="true" class="header-anchor">#</a> 查找属性</h2><p>另一个 Sytlus 独有的很有意思的功能是能够不需要指定变量去直接引用属性。一个很好的例子是垂直和水平居中元素所需要的逻辑(通常用百分比和负边距，如下所示):</p><pre class="language-stylus"><code><span class="token selector">#logo</span>
+    <span class="token property-declaration"><span class="token property">position</span><span class="token punctuation">:</span>absolute</span>
+    <span class="token property-declaration"><span class="token property">top</span><span class="token punctuation">:</span><span class="token number">50%</span></span>
+    <span class="token property-declaration"><span class="token property">left</span><span class="token punctuation">:</span><span class="token number">50%</span></span>
+    <span class="token property-declaration"><span class="token property">width</span><span class="token punctuation">:</span>w<span class="token operator">=</span><span class="token number">150</span>px</span>
+    <span class="token property-declaration"><span class="token property">height</span><span class="token punctuation">:</span>h<span class="token operator">=</span><span class="token number">80</span>px</span>
+    <span class="token property-declaration"><span class="token property">margin-left</span><span class="token punctuation">:</span><span class="token func"><span class="token function">-</span><span class="token punctuation">(</span>w<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span></span></span>
+    <span class="token property-declaration"><span class="token property">nargin-top</span><span class="token punctuation">:</span><span class="token func"><span class="token function">-</span><span class="token punctuation">(</span>h<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span></span></span>
+</code></pre><p>我们使用<code>@</code>符号以及属性名就可以代替之前的<code>w</code>和<code>h</code>:</p><pre class="language-text"><code>#logo
+    position:absolute
+    top:50%
+    left:50%
+    width:150px
+    height:80px
+    margin-left:-(@width/2)
+    margin-top:-(@height/2)
+</code></pre><p>另一中用是在已有的属性中有条件的定义属性值，下面这个例子我们应用一个当<code>z-index</code>未指定时<code>z-index</code>默认为 1:</p><pre class="language-text"><code>position()
+    position:arguments
+    z-index:1 unless @z-index
+
+#logo
+    z-index:20
+    position:absolute
+
+#logo2
+    position:absolute
+</code></pre><p>属性查找才采取冒泡的方式向上查找直到找到或者到栈顶仍未找到返回<code>null</code>，在下面例子中<code>color</code>将被解析为<code>blue</code>:</p><pre class="language-text"><code>body
+    color:red
+    ul
+        li
+            color:blue
+            a
+                background-color:@color
+</code></pre></div><!----><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/styleProcess/stylus/" class="prev router-link-active">
+          stylus了解
+        </a></span><span class="next"><a href="/styleProcess/stylus/selector.html">
+          选择器
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/styleProcess/assets/js/0.8a921080.js" defer></script><script src="/styleProcess/assets/js/app.e3b621a4.js" defer></script>
+  </body>
+</html>

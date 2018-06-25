@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>css预处理器 | 选择器</title>
+    <meta name="description" content="css预处理语言 使用总结">
+    <link rel="icon" href="/styleProcess/logo.png">
+  <link rel="manifest" href="/styleProcess/manifest.json">
+    
+    <link rel="preload" href="/styleProcess/assets/css/18.styles.3e9f533d.css" as="style"><link rel="preload" href="/styleProcess/assets/js/app.e3b621a4.js" as="script"><link rel="preload" href="/styleProcess/assets/js/1.625c0169.js" as="script"><link rel="prefetch" href="/styleProcess/assets/js/10.185f2d56.js"><link rel="prefetch" href="/styleProcess/assets/js/2.a8afffa5.js"><link rel="prefetch" href="/styleProcess/assets/js/3.09429867.js"><link rel="prefetch" href="/styleProcess/assets/js/4.dec1ca9b.js"><link rel="prefetch" href="/styleProcess/assets/js/5.10e73ff7.js"><link rel="prefetch" href="/styleProcess/assets/js/6.4543c32a.js"><link rel="prefetch" href="/styleProcess/assets/js/7.93e00f2e.js"><link rel="prefetch" href="/styleProcess/assets/js/8.0e7f02cd.js"><link rel="prefetch" href="/styleProcess/assets/js/9.d0f68f7e.js"><link rel="prefetch" href="/styleProcess/assets/js/0.8a921080.js"><link rel="prefetch" href="/styleProcess/assets/js/11.b1e4c8db.js"><link rel="prefetch" href="/styleProcess/assets/js/12.3ada07ed.js"><link rel="prefetch" href="/styleProcess/assets/js/13.54014618.js"><link rel="prefetch" href="/styleProcess/assets/js/14.47e7d96b.js"><link rel="prefetch" href="/styleProcess/assets/js/15.0ae7a566.js"><link rel="prefetch" href="/styleProcess/assets/js/16.5d215985.js"><link rel="prefetch" href="/styleProcess/assets/js/17.f41f3037.js">
+    <link rel="stylesheet" href="/styleProcess/assets/css/18.styles.3e9f533d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/styleProcess/" class="home-link router-link-active"><!----><span class="site-name">
+      css预处理器
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>less语法总结</span><!----></p><ul class="sidebar-group-items"><li><a href="/styleProcess/less/" class="sidebar-link">less了解</a></li><li><a href="/styleProcess/less/var.html" class="sidebar-link">变量</a></li><li><a href="/styleProcess/less/loop.html" class="sidebar-link">循环</a></li><li><a href="/styleProcess/less/mixin.html" class="sidebar-link">混入</a></li><li><a href="/styleProcess/less/parent.html" class="sidebar-link">父选择</a></li><li><a href="/styleProcess/less/import.html" class="sidebar-link">引用</a></li><li><a href="/styleProcess/less/combine.html" class="sidebar-link">合并</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>sass语法使用</span><span class="arrow right"></span></p><!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>stylus语法使用</span><span class="arrow down"></span></p><ul class="sidebar-group-items"><li><a href="/styleProcess/stylus/" class="sidebar-link">stylus了解</a></li><li><a href="/styleProcess/stylus/var.html" class="sidebar-link">变量</a></li><li><a href="/styleProcess/stylus/selector.html" class="active sidebar-link">选择器</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/styleProcess/stylus/selector.html#缩进" class="sidebar-link">缩进</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/selector.html#规则集" class="sidebar-link">规则集</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/selector.html#父集引用" class="sidebar-link">父集引用</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/selector.html#部分引用" class="sidebar-link">部分引用</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/selector.html#部分引用中的范围" class="sidebar-link">部分引用中的范围</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/selector.html#初始引用" class="sidebar-link">初始引用</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/selector.html#相对引用" class="sidebar-link">相对引用</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/selector.html#根引用" class="sidebar-link">根引用</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/selector.html#selector-内置函数" class="sidebar-link">selector() 内置函数</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/selector.html#多参数值的-selector-内置函数" class="sidebar-link">多参数值的 selector 内置函数</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/selector.html#selectors-内置函数" class="sidebar-link">selectors() 内置函数</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/selector.html#消除分歧" class="sidebar-link">消除分歧</a></li></ul></li><li><a href="/styleProcess/stylus/operator.html" class="sidebar-link">运算符</a></li><li><a href="/styleProcess/stylus/mixin.html" class="sidebar-link">混写</a></li><li><a href="/styleProcess/stylus/insert.html" class="sidebar-link">插入值</a></li></ul></div></li></ul></div><div class="page"><div class="content"><h1 id="选择器"><a href="#选择器" aria-hidden="true" class="header-anchor">#</a> 选择器</h1><h2 id="缩进"><a href="#缩进" aria-hidden="true" class="header-anchor">#</a> 缩进</h2><p>Stylus 看起来很神奇(因为缩进).在这里空格尤其重要，因为我们用缩进和减少缩进来替代了 <code>{</code> 和 <code>}</code> ,就像下面的代码:</p><pre class="language-text"><code>body
+    color white
+</code></pre><p>它会编译成这样：</p><pre class="language-text"><code>body
+    color:#fff
+</code></pre><p>如果你愿意，你也可以使用冒号来分隔属性和值</p><pre class="language-text"><code>body
+    color:white
+</code></pre><h2 id="规则集"><a href="#规则集" aria-hidden="true" class="header-anchor">#</a> 规则集</h2><p>Stylus 也和 CSS 一样，允许你使用逗号分隔来为多个选择器定义属性.</p><pre class="language-text"><code>textarea,input
+    border 1px solid #eee
+</code></pre><p>使用新行也是一样</p><pre class="language-text"><code>textarea
+input
+    border 1px solid #eee
+</code></pre><p>唯一例外的情况是那些看起来像属性的选择器。例如<code>foo bar baz</code>可能是一个属性或是一个选择器</p><pre class="language-text"><code>foo bar baz
+&gt;input
+    border 1px solid
+</code></pre><p>因为这个原因，我们可能需要在结尾加上一个逗号：</p><pre class="language-text"><code>foo bar baz,
+form input,
+&gt; a
+    border 1px solid
+</code></pre><h2 id="父集引用"><a href="#父集引用" aria-hidden="true" class="header-anchor">#</a> 父集引用</h2><p><code>&amp;</code>符号将引用父选择器。下面的例子中，两个选择器(<code>textarea</code>和<code>input</code>)会在<code>:hover</code>伪类选择器上都更新<code>color</code>值。</p><pre class="language-text"><code>textarea
+input
+    color #A7A7A7
+    &amp;:hover
+        color #000
+</code></pre><p>会被编译为：</p><pre class="language-text"><code>textarea,
+input{
+    color:#A7A7A7;
+}
+
+textarea:hover,
+input:hover{
+    color：#000
+}
+</code></pre><p>下面这里例子，将在混合书写中使用父集引用在 IE 浏览器下实现一个<code>2px</code>的边框：</p><pre class="language-text"><code>box-shadow()
+    -webkit-box-shadow arguments
+    -moz-box-shadow arguments
+    -box-shadow arguments
+    html.ie8 &amp;,
+    html.ie7 &amp;,
+    html.ie6 &amp;
+        border 2px solid arguments[length(arguments)-1]
+
+body
+    #login
+    box-shadow 1px 1px 3px #eee
+</code></pre><p>会变成这个样子：</p><pre class="language-text"><code>body #login{
+    -webkit-box-shadow: 1px 1px 3px #eee;
+    -moz-box-shadow: 1px 1px 3px #eee;
+    box-shadow: 1px 1px 3px #eee;
+}
+
+html.ie8 body #login,
+html.ie7 body #login,
+html.ie6 body #login {
+    border: 2px solid #eee;
+}
+</code></pre><p>如何你不需要<code>&amp;</code>在选择器之外也像一个父引用一样，你可以使用这样来避免:</p><pre class="language-text"><code>.foo[title*=‘\&amp;']
+//=&gt; .foo[title*='&amp;']
+</code></pre><h2 id="部分引用"><a href="#部分引用" aria-hidden="true" class="header-anchor">#</a> 部分引用</h2><p><code>^[N]</code>出现在选择器的任意位置，<code>N</code>是一个数字，表示一个部分引用。部分引用用法向父集引用一样，但是父引用包含着整个选择器，而部分引用仅包含着嵌套选择器的第<code>N</code>级，所以你可以单独引用潜逃中的某个级别。
+<code>^[0]</code>将获取到第一级选择器，<code>^[1]</code>将获取到第二级选择器元素，以此类推:</p><pre class="language-text"><code>.foo
+    &amp;_bar
+        width:10ox
+
+        ^[0]:forver &amp;
+            width:20px
+</code></pre><p>这将被渲染为:</p><pre class="language-text"><code>.foo_bar{
+    width:10px;
+}
+
+.foo:hover .foo_bar{
+    width:20px;
+}
+</code></pre><p>负值将从结尾开始结算,所以<code>^[-1]</code>将返回<code>&amp;</code>链前的最后一个选择器:</p><pre class="language-text"><code>.foo
+    &amp;_bar
+        &amp;_baz
+            width:10px
+
+            ^[-1]:hover &amp;
+            width:20px
+</code></pre><p>这将被渲染为:</p><pre class="language-text"><code>.foo_bar_baz{
+    width:10px;
+}
+.foo_bar:hove .foo_bar_baz{
+    width：20;
+}
+</code></pre><p>在回合书写中，当你不知道嵌套级别的时候，负值会是特别有用的用法去帮你找到它。</p><p><em>请记住部分引用在你给出获取的嵌套级别之前他将包含整个选择器渲染链，而不是选择器的一部分</em></p><h2 id="部分引用中的范围"><a href="#部分引用中的范围" aria-hidden="true" class="header-anchor">#</a> 部分引用中的范围</h2><p><code>^[N..M]</code>出现在选择器的任何位置，<code>N</code>和<code>M</code>是一个数字，表示一个部分引用。</p><p>如果你有这种情况，当你需要去获取选择其中的部分或者获取这个范围的部分程序，你可能需要在部分引用中使用范围。</p><p>如果范围从正值开始，这结果将不包含先前级别的选择器，你获得的结果中那些级别的选择器会被插入到根部并忽略组合(<em>翻译的不一定正确</em>)。</p><pre class="language-text"><code>.foo
+    &amp; .bar
+        width：10px
+
+        ^[0]:hover ^[1..-1]
+            width:20px
+</code></pre><p>它将会渲染为:</p><pre class="language-text"><code>.foo .bar{
+    width:10px;
+}
+.foo:hover .bar{
+    width:20px;
+}
+</code></pre><p>在这范围中一个数据会作为开始位置，另一个是结束位置，注意的是那些数字的顺序其实是无所谓的，他总会被从小到大进行渲染，如<code>^[1..-1]</code>和<code>^[-1..1]</code>是等同的。</p><p>当两个数字相等时，结果将会仅获取选择气的一级，所以在上个例子中你可以用<code>^[-1..-1]</code>代替<code>^[1..-1]</code>，它们都会返回最后一级选择器，如果在混合书写中使用它你会觉得更加可靠。</p><h2 id="初始引用"><a href="#初始引用" aria-hidden="true" class="header-anchor">#</a> 初始引用</h2><p><code>~/</code>符号在选择器的开始会被只想选择器嵌套的开始，可以认为他是<code>^[0]</code>的快捷方式。唯一的缺点就是你仅可以在选择器的开始使用它。</p><pre class="language-text"><code>.block
+    &amp;_element
+        ~/:hover &amp;
+            color:red
+</code></pre><p>会被渲染为:</p><pre class="language-text"><code>.block:hover .block_element{
+    color:#foo
+}
+</code></pre><h2 id="相对引用"><a href="#相对引用" aria-hidden="true" class="header-anchor">#</a> 相对引用</h2><p>以<code>../</code>符号开始的选择器被认为是一个相对引用，它会指向<code>&amp;</code>符号之前的一层的选择器。你也可以使用嵌套的相对引用:<code>../../</code>来获取更深层次的引用，但是需要注意的是它仅可以被用在选择器的开始位置。</p><pre class="language-text"><code>.foo
+    .bar
+        width:10
+    &amp;,
+    ../ .baz
+        height:10px
+</code></pre><p>将会渲染为:</p><pre class="language-text"><code>.foo .bar{
+    width:10px;
+}
+
+.foo .bar{
+    width:10px;
+}
+.foo .bar,
+.foo .baz{
+    height:10px;
+}
+</code></pre><p>相对引用可以认为是带范围的部分引用的快捷方式类似<code>^[0..(N+1)]</code>这里<code>N</code>相对引用中的数字。(<em>总觉得不太对有些问题</em>)</p><h2 id="根引用"><a href="#根引用" aria-hidden="true" class="header-anchor">#</a> 根引用</h2><p><code>/</code>符号出现在选择器的开始被认为是一个根引用，它会引用根上下文，这意味着不会将父选择器添加到它上面(除非你和&amp;一起使用).当你需要为默写嵌套选择器和另外的选择器写入一些样式时，它会很有帮助。</p><pre class="language-text"><code>textarea
+input
+    color #A7A7A7
+    &amp;:hover,
+    /.is-hovered
+        color #000
+</code></pre><p>编译后:</p><pre class="language-text"><code>textarea,
+inpu{
+    color:#a7a7a7;
+}
+
+textarea:hover,
+input:hover，
+.is-hovered{
+    color：#000
+}
+</code></pre><h2 id="selector-内置函数"><a href="#selector-内置函数" aria-hidden="true" class="header-anchor">#</a> selector() 内置函数</h2><p>你可以使用内置函数<code>selector()</code>去获取当前编译的选择器。可以使用在混合书写中去做检查或者其他有趣的事情。</p><pre class="language-text"><code>.foo
+    selector()
+//=&gt;‘.foo'
+
+.foo
+    &amp;：hover
+        selector()
+//'.foo:hover'
+</code></pre><p>这个内置函数可以传入可选的字符串参数,这种情况下它会返回编译好的选择器。注意的是如果没有<code>&amp;</code>符号的话，他将不受当前选择器作用域的影响。</p><pre class="language-text"><code>.foo
+    selector('.bar')
+//=&gt;'.bar'
+
+.foo
+    selector('&amp;:hover')
+//’.foo:hover'
+</code></pre><h2 id="多参数值的-selector-内置函数"><a href="#多参数值的-selector-内置函数" aria-hidden="true" class="header-anchor">#</a> 多参数值的 selector 内置函数</h2><p>selector()内置函数可以通过传入多参数值或逗号分隔的列表去更方便快捷的创建嵌套选择器。</p><pre class="language-text"><code>{selector('.a','.b','.c,.d')}
+    color:red
+</code></pre><p>等同于:</p><pre class="language-text"><code>.a
+    .b
+        .c,
+        .d
+            color:red
+</code></pre><p>它会被渲染为:</p><pre class="language-text"><code>.a .b .c,
+.a .b .d{
+    color:#f00
+}
+</code></pre><h2 id="selectors-内置函数"><a href="#selectors-内置函数" aria-hidden="true" class="header-anchor">#</a> selectors() 内置函数</h2><p>这个内置函数会返回当前层级的嵌入选择器的逗号列表分隔的内容。</p><pre class="language-text"><code>.a
+    .b
+        &amp;_c
+            content:selectors()
+</code></pre><p>编译为:</p><pre class="language-text"><code>.a .b_c{
+    content:'.a','&amp; .b','&amp;_c'
+}
+</code></pre><h2 id="消除分歧"><a href="#消除分歧" aria-hidden="true" class="header-anchor">#</a> 消除分歧</h2><p>像<code>margin -n</code>这样的表达式中<code>-n</code>可能会被解释为一个减法运算，也可能解释成一个一元运算符，为了避免这种分歧，需要用括号包裹住表达式:</p><pre class="language-text"><code>pad(n)
+    margin (-n)
+
+body
+    pad(5px)
+</code></pre><p>编译为:</p><pre class="language-text"><code>body{
+    margin:-5px;
+}
+</code></pre><p>但是仅在函数中会这样(因为函数用返回值同时扮演着混合和回调)。</p><p>下面这个例子，就是正常的（和上面一样的结果）:</p><pre class="language-text"><code>body
+    margin -5px
+</code></pre><p>如果有 Stylus 无法处理的属性值，那么<code>unquote</code>会帮到你:</p><pre class="language-text"><code>filter unquote('progid:DXImageTransform.Microsoft.BasicImage(rotation=1)')
+</code></pre><p>生成为:</p><pre class="language-text"><code>filter progid:DXImageTransform.Microsoft.BasicImage(rotation=1)
+</code></pre></div><!----><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/styleProcess/stylus/var.html" class="prev">
+          变量
+        </a></span><span class="next"><a href="/styleProcess/stylus/operator.html">
+          运算符
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/styleProcess/assets/js/1.625c0169.js" defer></script><script src="/styleProcess/assets/js/app.e3b621a4.js" defer></script>
+  </body>
+</html>

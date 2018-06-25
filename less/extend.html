@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>css预处理器 | 继承使用</title>
+    <meta name="description" content="css预处理语言 使用总结">
+    <link rel="icon" href="/styleProcess/logo.png">
+  <link rel="manifest" href="/styleProcess/manifest.json">
+    
+    <link rel="preload" href="/styleProcess/assets/css/18.styles.3e9f533d.css" as="style"><link rel="preload" href="/styleProcess/assets/js/app.e3b621a4.js" as="script"><link rel="preload" href="/styleProcess/assets/js/14.47e7d96b.js" as="script"><link rel="prefetch" href="/styleProcess/assets/js/10.185f2d56.js"><link rel="prefetch" href="/styleProcess/assets/js/1.625c0169.js"><link rel="prefetch" href="/styleProcess/assets/js/2.a8afffa5.js"><link rel="prefetch" href="/styleProcess/assets/js/3.09429867.js"><link rel="prefetch" href="/styleProcess/assets/js/4.dec1ca9b.js"><link rel="prefetch" href="/styleProcess/assets/js/5.10e73ff7.js"><link rel="prefetch" href="/styleProcess/assets/js/6.4543c32a.js"><link rel="prefetch" href="/styleProcess/assets/js/7.93e00f2e.js"><link rel="prefetch" href="/styleProcess/assets/js/8.0e7f02cd.js"><link rel="prefetch" href="/styleProcess/assets/js/9.d0f68f7e.js"><link rel="prefetch" href="/styleProcess/assets/js/0.8a921080.js"><link rel="prefetch" href="/styleProcess/assets/js/11.b1e4c8db.js"><link rel="prefetch" href="/styleProcess/assets/js/12.3ada07ed.js"><link rel="prefetch" href="/styleProcess/assets/js/13.54014618.js"><link rel="prefetch" href="/styleProcess/assets/js/15.0ae7a566.js"><link rel="prefetch" href="/styleProcess/assets/js/16.5d215985.js"><link rel="prefetch" href="/styleProcess/assets/js/17.f41f3037.js">
+    <link rel="stylesheet" href="/styleProcess/assets/css/18.styles.3e9f533d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/styleProcess/" class="home-link router-link-active"><!----><span class="site-name">
+      css预处理器
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>less语法总结</span><!----></p><ul class="sidebar-group-items"><li><a href="/styleProcess/less/" class="sidebar-link">less了解</a></li><li><a href="/styleProcess/less/var.html" class="sidebar-link">变量</a></li><li><a href="/styleProcess/less/loop.html" class="sidebar-link">循环</a></li><li><a href="/styleProcess/less/mixin.html" class="sidebar-link">混入</a></li><li><a href="/styleProcess/less/parent.html" class="sidebar-link">父选择</a></li><li><a href="/styleProcess/less/import.html" class="sidebar-link">引用</a></li><li><a href="/styleProcess/less/combine.html" class="sidebar-link">合并</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>sass语法使用</span><span class="arrow right"></span></p><!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>stylus语法使用</span><span class="arrow right"></span></p><!----></div></li></ul></div><div class="page"><div class="content"><h2 id="继承使用"><a href="#继承使用" aria-hidden="true" class="header-anchor">#</a> 继承使用</h2><p>如下例：</p><pre class="language-less"><code><span class="token selector">nav ul:extend(.inline)</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.inline</span> <span class="token punctuation">{</span>
+<span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">nav ul</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.inline,
+nav ul</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译结果中，继承属性在原声明中删除，出现在被继承规则相同位置。如上例，如果将<code>.inline</code>规则写在<code>nav ul</code>之前，编译结果将是：</p><pre class="language-css"><code><span class="token selector">.inline,
+nav ul</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">nav ul</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="语法"><a href="#语法" aria-hidden="true" class="header-anchor">#</a> 语法</h3><p>下面两种写法等价：</p><pre class="language-less"><code><span class="token comment">// 在选择器后声明</span>
+  <span class="token selector">.a:extend(.b)</span> <span class="token punctuation">{</span>
+
+<span class="token punctuation">}</span>
+</code></pre><pre class="language-less"><code><span class="token comment">// 在规则中声明</span>
+<span class="token selector">.a</span> <span class="token punctuation">{</span>
+  &amp;<span class="token punctuation">:</span><span class="token function">extend</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>不过建议使用第一种，因为如果使用 Atom 插件 atom-beauty，且选择<code>align assignments</code>，会导致语法错误。</p><p>如果使用关键字<code>all</code>，则可继承嵌套中的规则（默认只继承第一层级）：</p><pre class="language-less"><code><span class="token selector">.inline</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token selector">a</span> <span class="token punctuation">{</span>
+    <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">nav ul:extend(.inline all)</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.inline,
+nav ul</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.inline a,
+nav ul a</span> <span class="token punctuation">{</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">nav ul</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>还可继承多个：</p><pre class="language-less"><code><span class="token selector">.inline</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+  <span class="token selector">a</span> <span class="token punctuation">{</span>
+    <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.block</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">nav ul:extend(.inline all, .block)</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.inline,
+nav ul</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.inline a,
+nav ul a</span> <span class="token punctuation">{</span>
+  <span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.block,
+nav ul</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">nav ul</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="在选择器后声明"><a href="#在选择器后声明" aria-hidden="true" class="header-anchor">#</a> 在选择器后声明</h3><p>一个选择器后可跟多个继承语句，但位置必须在最后。</p><ul><li>在选择器后：<code>pre:hover:extend(div pre)</code></li><li>允许选择器和继承语句间有空格： <code>pre:hover :extend(div pre)</code></li><li>允许多个继承：<code>pre:hover:extend(div pre):extend(.bucket tr)</code>
+等价于<code>pre:hover:extend(div pre, .buket tr)</code></li><li>不允许出现在中间：<code>pre:hover:extend(div pre).nth-child</code></li></ul><p>如果有多个选择器，每个选择器都允许继承：</p><pre class="language-less"><code><span class="token selector">.big-division,
+.big-bag:extend(.bag),
+.big-bucked:extend(.bucket)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// ....</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="在规则中声明"><a href="#在规则中声明" aria-hidden="true" class="header-anchor">#</a> 在规则中声明</h3><p>在规则中声明使用<code>&amp;:extend(selector)</code>语法。如：</p><pre class="language-less"><code><span class="token selector">pre:hover,
+.some-class</span> <span class="token punctuation">{</span>
+  &amp;<span class="token punctuation">:</span><span class="token function">extend</span><span class="token punctuation">(</span>div pre<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>等价于：</p><pre class="language-less"><code><span class="token selector">pre:hover:extend(div pre)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.some-class:extend(div pre)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="继承被嵌套的选择器"><a href="#继承被嵌套的选择器" aria-hidden="true" class="header-anchor">#</a> 继承被嵌套的选择器</h3><p>处于嵌套中的选择器，同样也可被继承：</p><pre class="language-less"><code><span class="token selector">.bucket</span> <span class="token punctuation">{</span>
+  <span class="token selector">tr</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.some-class:extend(.bucket tr)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.bucket tr,
+.some-class</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>继承以编译后的 CSS 为基准，而不是原来的 Less：</p><pre class="language-less"><code><span class="token selector">.bucket</span> <span class="token punctuation">{</span>
+  <span class="token selector">tr &amp;</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.some-class:extend(tr .bucket)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为</p><pre class="language-css"><code><span class="token selector">tr .bucket,
+.some-class</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="精确继承"><a href="#精确继承" aria-hidden="true" class="header-anchor">#</a> 精确继承</h3><p>继承的选择器必须在形式上精确一致。无论选择器首部是否有<code>*</code>号，<code>nth</code>表达式计算的结果是否一致，只要形式上不一致，都不能实现继承。唯一例外的是属性选择器，含义相同即可。下面两个例子都不能正常继承。</p><pre class="language-less"><code><span class="token selector">.a.class,
+.class.a,
+.class &gt; .a</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.test:extend(.class)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre><pre class="language-less"><code><span class="token selector">*.class</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.noStar:extend(.class)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre><p>如果是伪类选择器，其顺序同样需保持一致：</p><pre class="language-less"><code><span class="token selector">link:hover:visited</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.selector:extend(link:visited:hover)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span> <span class="token comment">//不能正常继承。</span>
+</code></pre><h4 id="nth-选择器"><a href="#nth-选择器" aria-hidden="true" class="header-anchor">#</a> nth 选择器</h4><p>即使<code>1n+3</code>和<code>n+3</code>计算结果一样，但形式不一还是不能继承：</p><pre class="language-less"><code><span class="token selector">:nth-child(1n + 3)</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.child:extend(:nth-child(n + 3))</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span> <span class="token comment">//不能正常继承</span>
+</code></pre><h4 id="属性选择器中的引号"><a href="#属性选择器中的引号" aria-hidden="true" class="header-anchor">#</a> 属性选择器中的引号</h4><p>属性选择器中的引号形式可不精确匹配，下例可正常继承</p><pre class="language-less"><code><span class="token selector">[title=&quot;identifier&quot;]</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">[title=&quot;identifier&quot;]</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">[title=&quot;identifier&quot;]</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.noQuote:extend([title=&quot;identifier&quot;])</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.singleQuote:extend([title=&quot;identifier&quot;])</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.doubleQuote:extend([title=&quot;identifier&quot;])</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="继承所有（“all”）"><a href="#继承所有（“all”）" aria-hidden="true" class="header-anchor">#</a> 继承所有（“all”）</h3><p>如果继承时声明关键字<code>all</code>，所有继承选择器出现的地方都会被继承：</p><pre class="language-less"><code><span class="token selector">.test.c,
+a.b.test</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.test</span> <span class="token punctuation">{</span>
+  <span class="token selector">&amp;:hover</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.replacement:extend(.test all)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.test.c,
+.replacement.c,
+a.b.test,
+a.b.replacement</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.test:hover， replacement:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> green<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="“插值”选择器继承"><a href="#“插值”选择器继承" aria-hidden="true" class="header-anchor">#</a> “插值”选择器继承</h3><p>如果被继承的选择器由“插值”生成，则继承被忽略：</p><pre class="language-less"><code><span class="token variable">@var<span class="token punctuation">:</span></span> .bucket<span class="token punctuation">;</span>
+
+<span class="token selector">@{var}</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.some-class:extend(.bucket)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre><pre class="language-less"><code><span class="token variable">@var<span class="token punctuation">:</span></span> .bucket<span class="token punctuation">;</span>
+
+<span class="token selector">@{var}</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.some-class:extend(@{var})</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre><p>上两例都不能正常继承。不过下例可正常继承：</p><pre class="language-less"><code><span class="token selector">.bucket</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">@{var}:extend(.bucket)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+<span class="token variable">@var<span class="token punctuation">:</span></span> .selector<span class="token punctuation">;</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.bucket,
+.selector</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="media与继承"><a href="#media与继承" aria-hidden="true" class="header-anchor">#</a><code>@media</code>与继承</h3><p>仅能在同一级<code>media</code>继承：</p><pre class="language-less"><code><span class="token atrule">@media print</span> <span class="token punctuation">{</span>
+  <span class="token selector">.screenClass:extend(.selector)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span>
+
+  <span class="token selector">.selector</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.selector</span> <span class="token punctuation">{</span>
+  <span class="token comment">//另一个作用域，不继承</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token atrule">@media screen</span> <span class="token punctuation">{</span>
+  <span class="token comment">// 另一个@media，不继承</span>
+  <span class="token selector">.selector</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token atrule"><span class="token rule">@media</span> print</span> <span class="token punctuation">{</span>
+  <span class="token selector">.selector,
+  .screenClass</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.selector</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> red<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token atrule"><span class="token rule">@media</span> screen</span> <span class="token punctuation">{</span>
+  <span class="token selector">.selector</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>也不能继承同一级中，嵌套在另外一个<code>@media</code>中的选择器：</p><pre class="language-less"><code><span class="token atrule">@media screen</span> <span class="token punctuation">{</span>
+  <span class="token selector">.screenClass:extend(.selector)</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span>
+  <span class="token atrule">@media <span class="token punctuation">(</span>min-width<span class="token punctuation">:</span> 1023px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+    <span class="token selector">.selector</span> <span class="token punctuation">{</span>
+      <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>不能正常继承，编译为：</p><pre class="language-css"><code><span class="token atrule"><span class="token rule">@media</span> screen and <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 1023px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">.selector</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>如果在<code>@media</code>外部继承其内部选择器，即使选择器嵌套在内，也会被继承：</p><pre class="language-less"><code><span class="token atrule">@media screen</span> <span class="token punctuation">{</span>
+  <span class="token selector">.selector</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+  <span class="token atrule">@media <span class="token punctuation">(</span>min-width<span class="token punctuation">:</span> 1023px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+    <span class="token selector">.selector</span> <span class="token punctuation">{</span>
+      <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.topLevel:extend(.selector)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token atrule"><span class="token rule">@media</span> screen</span> <span class="token punctuation">{</span>
+  <span class="token selector">.selector,
+  .topLevel</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token atrule"><span class="token rule">@media</span> screen and <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 1023px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+  <span class="token selector">.selector,
+  .topLevel</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="重复检测"><a href="#重复检测" aria-hidden="true" class="header-anchor">#</a> 重复检测</h3><p>目前还不支持重复检测功能：</p><pre class="language-less"><code><span class="token selector">.alert-info,
+.widget</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.alert:extend(.alert-info, .widget)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.alert-info,
+.widget,
+.alert,
+.alert</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="继承使用场景"><a href="#继承使用场景" aria-hidden="true" class="header-anchor">#</a> 继承使用场景</h3><h4 id="经典案例"><a href="#经典案例" aria-hidden="true" class="header-anchor">#</a> 经典案例</h4><p>减少类名。如下例：</p><pre class="language-less"><code><span class="token selector">.animal</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>如果需要为特定动物，如 bear 添加样式，只更改背景颜色。有两种方法可选：</p><p>1.更改 HTML 结构</p><pre><code>```html
+&lt;a href=&quot;#&quot; class=&quot;animal bear&quot;&gt;Bear&lt;/a&gt;
+```
+
+```less
+.animal{
+	background-color: black;
+	color: white;
+}
+.bear{
+	background-color: brown;
+}
+```
+</code></pre><p>2.不更改 HTML 结构，而是在样式中继承</p><pre><code>```html
+	&lt;a href=&quot;#&quot; class=&quot;bear&quot;&gt;Bear&lt;/a&gt;
+```
+
+```less
+.animal{
+	background-color: black;
+	color: white;
+}
+.bear:extend(.animal){
+	background-color: brown;
+}
+```
+</code></pre><h4 id="减小-css-文件大小"><a href="#减小-css-文件大小" aria-hidden="true" class="header-anchor">#</a> 减小 CSS 文件大小</h4><p>混合器（mixin）会复制所有规则，导致不必要的声明重复，使用继承可有效解决这一问题。</p><p>例（使用混合器）:</p><pre class="language-less"><code><span class="token selector">.my-inline-block</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline<span class="token operator">-</span>block<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.thing1</span> <span class="token punctuation">{</span>
+  <span class="token mixin-usage function">.my-inline-block</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.thing2</span> <span class="token punctuation">{</span>
+  <span class="token mixin-usage function">.my-inline-block</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.my-inline-block</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.thing1</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.thing2</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>使用继承：</p><pre class="language-less"><code><span class="token selector">.my-inline-block</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline<span class="token operator">-</span>block<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.thing1:extend(.my-inline-block)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.thing2:extend(.my-inline-block)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.my-inline-block,
+.thing1,
+.thing2</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline-block<span class="token punctuation">;</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 0<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h4 id="高级版混合器（mixin）"><a href="#高级版混合器（mixin）" aria-hidden="true" class="header-anchor">#</a> 高级版混合器（mixin）</h4><p>混合器（mixin）只能用于简单的选择器。当 mixin 不能满足需求时，可用继承替代：</p><pre class="language-less"><code><span class="token selector">li.list &gt; a</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">button.list-style:extend(li.list &gt; a)</span> <span class="token punctuation">{</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="混合器（mixin）"><a href="#混合器（mixin）" aria-hidden="true" class="header-anchor">#</a> 混合器（mixin）</h2><p>ID 和 class 选择器，以及非绑定属性声明集都可作为混合器：</p><pre class="language-less"><code><span class="token selector">#id,
+.a</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.mixin-class</span> <span class="token punctuation">{</span>
+  <span class="token mixin-usage function">.a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.mixin-id</span> <span class="token punctuation">{</span>
+  <span class="token mixin-usage function">#id</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">#id,
+.a</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.mixin-class</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.mixin-id</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>使用混合器时，后面的小括号可省（非绑定属性声明集除外），下面两种写法等价：</p><pre class="language-less"><code><span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token mixin-usage function">.a</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">body</span> <span class="token punctuation">{</span>
+  <span class="token mixin-usage function">.a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="不输出混合器自身"><a href="#不输出混合器自身" aria-hidden="true" class="header-anchor">#</a> 不输出混合器自身</h3><p>如果需要使用混合器，但又不将其输出，可在声明时后面紧跟小括号：</p><pre class="language-less"><code><span class="token selector">.my-mixin</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.my-other-mixin()</span> <span class="token punctuation">{</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.class</span> <span class="token punctuation">{</span>
+  <span class="token mixin-usage function">.my-mixin</span><span class="token punctuation">;</span>
+  <span class="token mixin-usage function">.my-other-mixin</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.my-mixin</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.class</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="混合器中嵌套选择器"><a href="#混合器中嵌套选择器" aria-hidden="true" class="header-anchor">#</a> 混合器中嵌套选择器</h3><p>混合器中不只是可含属性声明，同样可嵌套选择器：</p><pre class="language-less"><code><span class="token selector">.my-hover-mixin()</span> <span class="token punctuation">{</span>
+  <span class="token selector">&amp;:hover</span> <span class="token punctuation">{</span>
+    <span class="token property">border</span><span class="token punctuation">:</span> 1px solid blue<span class="token punctuation">;</span>
+    <span class="token selector">a</span> <span class="token punctuation">{</span>
+      <span class="token property">font-size</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">button</span> <span class="token punctuation">{</span>
+  <span class="token mixin-usage function">.my-hover-mixin</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">button:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">button:hover a</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="命名空间（namespace）"><a href="#命名空间（namespace）" aria-hidden="true" class="header-anchor">#</a> 命名空间（namespace）</h3><p>某些情况下，只需使用混合其中嵌套的规则：</p><pre class="language-less"><code><span class="token selector">#outer()</span> <span class="token punctuation">{</span>
+  <span class="token selector">.inner</span> <span class="token punctuation">{</span>
+    <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+    <span class="token selector">.inner-most</span> <span class="token punctuation">{</span>
+      <span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.c</span> <span class="token punctuation">{</span>
+  <span class="token mixin-usage function">#outer &gt; .inner</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.c</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.c .inner-most</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>其中<code>&gt;</code>和空格可选，下例等价：</p><pre class="language-less"><code><span class="token selector">.c</span> <span class="token punctuation">{</span>
+  <span class="token mixin-usage function">#outer .inner</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.c</span> <span class="token punctuation">{</span>
+  <span class="token mixin-usage function">#outer.inner</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>如需使用嵌套 2 层以上的选择器（如<code>.inner-most</code>），不能跳过其父选择器：</p><pre class="language-less"><code><span class="token selector">.c</span> <span class="token punctuation">{</span>
+  <span class="token mixin-usage function">#outer &gt; .inner &gt; .inner-most</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>或者：</p><pre class="language-less"><code><span class="token selector">.c</span> <span class="token punctuation">{</span>
+  <span class="token mixin-usage function">#outer .inner .inner-most</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>或者：</p><pre class="language-less"><code><span class="token selector">.c</span> <span class="token punctuation">{</span>
+  <span class="token mixin-usage function">#outer.inner.inner-most</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>都可。而下例不可：</p><pre class="language-less"><code><span class="token selector">.c</span> <span class="token punctuation">{</span>
+  <span class="token mixin-usage function">#outer .inner-most</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="带条件的命名空间（guarded-namespaces）"><a href="#带条件的命名空间（guarded-namespaces）" aria-hidden="true" class="header-anchor">#</a> 带条件的命名空间（Guarded Namespaces）</h3><h3 id="improtant关键字"><a href="#improtant关键字" aria-hidden="true" class="header-anchor">#</a><code>!improtant</code>关键字</h3><p>使用混合器时，如声明<code>!important</code>关键字，生成的所有属性都会带上<code>!important</code>关键字：</p><pre class="language-less"><code><span class="token selector">.foo()</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.unimportant</span> <span class="token punctuation">{</span>
+  <span class="token mixin-usage function">.foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.important</span> <span class="token punctuation">{</span>
+  <span class="token mixin-usage function">.foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token important">!important</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.unimportant</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.important</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> yellow <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black <span class="token important">!important</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><!----><!----></div></div></div>
+    <script src="/styleProcess/assets/js/14.47e7d96b.js" defer></script><script src="/styleProcess/assets/js/app.e3b621a4.js" defer></script>
+  </body>
+</html>

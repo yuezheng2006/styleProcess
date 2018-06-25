@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>css预处理器 | 插值</title>
+    <meta name="description" content="css预处理语言 使用总结">
+    <link rel="icon" href="/styleProcess/logo.png">
+  <link rel="manifest" href="/styleProcess/manifest.json">
+    
+    <link rel="preload" href="/styleProcess/assets/css/18.styles.3e9f533d.css" as="style"><link rel="preload" href="/styleProcess/assets/js/app.e3b621a4.js" as="script"><link rel="preload" href="/styleProcess/assets/js/4.dec1ca9b.js" as="script"><link rel="prefetch" href="/styleProcess/assets/js/10.185f2d56.js"><link rel="prefetch" href="/styleProcess/assets/js/1.625c0169.js"><link rel="prefetch" href="/styleProcess/assets/js/2.a8afffa5.js"><link rel="prefetch" href="/styleProcess/assets/js/3.09429867.js"><link rel="prefetch" href="/styleProcess/assets/js/5.10e73ff7.js"><link rel="prefetch" href="/styleProcess/assets/js/6.4543c32a.js"><link rel="prefetch" href="/styleProcess/assets/js/7.93e00f2e.js"><link rel="prefetch" href="/styleProcess/assets/js/8.0e7f02cd.js"><link rel="prefetch" href="/styleProcess/assets/js/9.d0f68f7e.js"><link rel="prefetch" href="/styleProcess/assets/js/0.8a921080.js"><link rel="prefetch" href="/styleProcess/assets/js/11.b1e4c8db.js"><link rel="prefetch" href="/styleProcess/assets/js/12.3ada07ed.js"><link rel="prefetch" href="/styleProcess/assets/js/13.54014618.js"><link rel="prefetch" href="/styleProcess/assets/js/14.47e7d96b.js"><link rel="prefetch" href="/styleProcess/assets/js/15.0ae7a566.js"><link rel="prefetch" href="/styleProcess/assets/js/16.5d215985.js"><link rel="prefetch" href="/styleProcess/assets/js/17.f41f3037.js">
+    <link rel="stylesheet" href="/styleProcess/assets/css/18.styles.3e9f533d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/styleProcess/" class="home-link router-link-active"><!----><span class="site-name">
+      css预处理器
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>less语法总结</span><!----></p><ul class="sidebar-group-items"><li><a href="/styleProcess/less/" class="sidebar-link">less了解</a></li><li><a href="/styleProcess/less/var.html" class="sidebar-link">变量</a></li><li><a href="/styleProcess/less/loop.html" class="sidebar-link">循环</a></li><li><a href="/styleProcess/less/mixin.html" class="sidebar-link">混入</a></li><li><a href="/styleProcess/less/parent.html" class="sidebar-link">父选择</a></li><li><a href="/styleProcess/less/import.html" class="sidebar-link">引用</a></li><li><a href="/styleProcess/less/combine.html" class="sidebar-link">合并</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>sass语法使用</span><span class="arrow right"></span></p><!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>stylus语法使用</span><span class="arrow down"></span></p><ul class="sidebar-group-items"><li><a href="/styleProcess/stylus/" class="sidebar-link">stylus了解</a></li><li><a href="/styleProcess/stylus/var.html" class="sidebar-link">变量</a></li><li><a href="/styleProcess/stylus/selector.html" class="sidebar-link">选择器</a></li><li><a href="/styleProcess/stylus/operator.html" class="sidebar-link">运算符</a></li><li><a href="/styleProcess/stylus/mixin.html" class="sidebar-link">混写</a></li><li><a href="/styleProcess/stylus/insert.html" class="active sidebar-link">插入值</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/styleProcess/stylus/insert.html#插值" class="sidebar-link">插值</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/insert.html#选择器插值" class="sidebar-link">选择器插值</a></li></ul></li></ul></div></li></ul></div><div class="page"><div class="content"><h2 id="插值"><a href="#插值" aria-hidden="true" class="header-anchor">#</a> 插值</h2><p>Stylus 支持插入值，通过使用<code>{}</code>中包裹的表达式，表达式的结果将会变为定义的一部分。
+例如，<code>-webkit-{'border'＋’－radius‘</code>等同于<code>-webkit-border-radius</code>.</p><p>一个很好的例子就是对于私有前缀额扩展属性。</p><pre class="language-stylus"><code><span class="token func"><span class="token function">vendor</span><span class="token punctuation">(</span>prop<span class="token punctuation">,</span>args<span class="token punctuation">)</span></span>
+    <span class="token property-declaration"><span class="token property">-webkit-<span class="token interpolation variable"><span class="token delimiter punctuation">{</span>prop<span class="token delimiter punctuation">}</span></span></span> args</span>
+    <span class="token property-declaration"><span class="token property">-moz-prop</span> args</span>
+    <span class="token property-declaration"><span class="token property"><span class="token interpolation variable"><span class="token delimiter punctuation">{</span>prop<span class="token delimiter punctuation">}</span></span></span> args</span>
+
+<span class="token func"><span class="token function">border-radius</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+    <span class="token selector">vendor<span class="token punctuation">{</span></span><span class="token string">'border-radius'</span>,augments<span class="token punctuation">}</span>
+
+<span class="token func"><span class="token function">box-shadow</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+    <span class="token func"><span class="token function">vendor</span><span class="token punctuation">(</span><span class="token string">'box-shadow'</span><span class="token punctuation">,</span>augments<span class="token punctuation">)</span></span>
+
+<span class="token selector">button</span>
+    <span class="token property-declaration"><span class="token property">border-radius</span> <span class="token number">1</span>px <span class="token number">2</span>px <span class="token operator">/</span> <span class="token number">3</span>px <span class="token number">4</span>px</span>
+</code></pre><p>生成为:</p><pre class="language-css"><code><span class="token selector">button</span> <span class="token punctuation">{</span>
+    <span class="token property">-webkit-border-radius</span><span class="token punctuation">:</span> 1px 2px / 3px 4px<span class="token punctuation">;</span>
+    <span class="token property">-moz-border-radius</span><span class="token punctuation">:</span> 1px 2px / 3px 4px<span class="token punctuation">;</span>
+    <span class="token property">border-radius</span><span class="token punctuation">:</span> 1px 2px / 3px 4px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="选择器插值"><a href="#选择器插值" aria-hidden="true" class="header-anchor">#</a> 选择器插值</h2><p>插值也可以在选择器中运用到。例如，我可以插入值去指定一个表格中前５行的高属性值，向下面这样：</p><pre class="language-stylus"><code><span class="token selector">table</span>
+    <span class="token statement"><span class="token keyword">for</span> row <span class="token operator">in</span> <span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span> <span class="token number">5</span></span>
+        <span class="token selector">tr:nth-child(<span class="token interpolation variable"><span class="token delimiter punctuation">{</span>row<span class="token delimiter punctuation">}</span></span>)</span>
+            <span class="token property-declaration"><span class="token property">height</span><span class="token punctuation">:</span><span class="token number">10</span>px<span class="token operator">*</span>row</span>
+</code></pre><p>生成为:</p><pre class="language-css"><code><span class="token selector">table tr:nth-child(1)</span><span class="token punctuation">{</span>
+    <span class="token property">height</span><span class="token punctuation">:</span>10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">table tr:nth-child(1)</span><span class="token punctuation">{</span>
+    <span class="token property">height</span><span class="token punctuation">:</span>20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">table tr:nth-child(1)</span><span class="token punctuation">{</span>
+    <span class="token property">height</span><span class="token punctuation">:</span>30px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">table tr:nth-child(1)</span><span class="token punctuation">{</span>
+    <span class="token property">height</span><span class="token punctuation">:</span>40px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">table tr:nth-child(1)</span><span class="token punctuation">{</span>
+    <span class="token property">height</span><span class="token punctuation">:</span>50px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>你也可以把多个选择器当做一个字符串放在一个变量中，去插入到他们应该在的地方：</p><pre class="language-stylus"><code><span class="token variable-declaration"><span class="token variable">mySelector</span> <span class="token operator">=</span> <span class="token string">'#foo,#bar,.bar'</span></span>
+
+<span class="token selector"><span class="token interpolation variable"><span class="token delimiter punctuation">{</span>mySelectors<span class="token delimiter punctuation">}</span></span></span>
+    <span class="token property-declaration"><span class="token property">background</span><span class="token punctuation">:</span><span class="token hexcode">#000</span></span>
+</code></pre><p>变成为:</p><pre class="language-css"><code><span class="token selector">#foo,
+#bar,
+.baz</span><span class="token punctuation">{</span>
+    <span class="token property">background</span><span class="token punctuation">:</span>#000l
+<span class="token punctuation">}</span>
+</code></pre></div><!----><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/styleProcess/stylus/mixin.html" class="prev">
+          混写
+        </a></span><!----></p></div></div></div></div>
+    <script src="/styleProcess/assets/js/4.dec1ca9b.js" defer></script><script src="/styleProcess/assets/js/app.e3b621a4.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>css预处理器 | 运算符</title>
+    <meta name="description" content="css预处理语言 使用总结">
+    <link rel="icon" href="/styleProcess/logo.png">
+  <link rel="manifest" href="/styleProcess/manifest.json">
+    
+    <link rel="preload" href="/styleProcess/assets/css/18.styles.3e9f533d.css" as="style"><link rel="preload" href="/styleProcess/assets/js/app.e3b621a4.js" as="script"><link rel="preload" href="/styleProcess/assets/js/2.a8afffa5.js" as="script"><link rel="prefetch" href="/styleProcess/assets/js/10.185f2d56.js"><link rel="prefetch" href="/styleProcess/assets/js/1.625c0169.js"><link rel="prefetch" href="/styleProcess/assets/js/3.09429867.js"><link rel="prefetch" href="/styleProcess/assets/js/4.dec1ca9b.js"><link rel="prefetch" href="/styleProcess/assets/js/5.10e73ff7.js"><link rel="prefetch" href="/styleProcess/assets/js/6.4543c32a.js"><link rel="prefetch" href="/styleProcess/assets/js/7.93e00f2e.js"><link rel="prefetch" href="/styleProcess/assets/js/8.0e7f02cd.js"><link rel="prefetch" href="/styleProcess/assets/js/9.d0f68f7e.js"><link rel="prefetch" href="/styleProcess/assets/js/0.8a921080.js"><link rel="prefetch" href="/styleProcess/assets/js/11.b1e4c8db.js"><link rel="prefetch" href="/styleProcess/assets/js/12.3ada07ed.js"><link rel="prefetch" href="/styleProcess/assets/js/13.54014618.js"><link rel="prefetch" href="/styleProcess/assets/js/14.47e7d96b.js"><link rel="prefetch" href="/styleProcess/assets/js/15.0ae7a566.js"><link rel="prefetch" href="/styleProcess/assets/js/16.5d215985.js"><link rel="prefetch" href="/styleProcess/assets/js/17.f41f3037.js">
+    <link rel="stylesheet" href="/styleProcess/assets/css/18.styles.3e9f533d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/styleProcess/" class="home-link router-link-active"><!----><span class="site-name">
+      css预处理器
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>less语法总结</span><!----></p><ul class="sidebar-group-items"><li><a href="/styleProcess/less/" class="sidebar-link">less了解</a></li><li><a href="/styleProcess/less/var.html" class="sidebar-link">变量</a></li><li><a href="/styleProcess/less/loop.html" class="sidebar-link">循环</a></li><li><a href="/styleProcess/less/mixin.html" class="sidebar-link">混入</a></li><li><a href="/styleProcess/less/parent.html" class="sidebar-link">父选择</a></li><li><a href="/styleProcess/less/import.html" class="sidebar-link">引用</a></li><li><a href="/styleProcess/less/combine.html" class="sidebar-link">合并</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>sass语法使用</span><span class="arrow right"></span></p><!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>stylus语法使用</span><span class="arrow down"></span></p><ul class="sidebar-group-items"><li><a href="/styleProcess/stylus/" class="sidebar-link">stylus了解</a></li><li><a href="/styleProcess/stylus/var.html" class="sidebar-link">变量</a></li><li><a href="/styleProcess/stylus/selector.html" class="sidebar-link">选择器</a></li><li><a href="/styleProcess/stylus/operator.html" class="active sidebar-link">运算符</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/styleProcess/stylus/operator.html#运算符优先级" class="sidebar-link">运算符优先级</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/operator.html#一元表达式" class="sidebar-link">一元表达式</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/operator.html#范围运算符" class="sidebar-link">范围运算符 .. ...</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/operator.html#加减运算符" class="sidebar-link">加减运算符: + -</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/operator.html#乘法运算符" class="sidebar-link">乘法运算符: / \* %</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/operator.html#指数" class="sidebar-link">指数: \*\*</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/operator.html#相等和关系运算符" class="sidebar-link">相等和关系运算符 : == != &gt;= &lt;= &gt;&lt;</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/operator.html#真实性" class="sidebar-link">真实性</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/operator.html#逻辑运算符-and-or" class="sidebar-link">逻辑运算符: &amp;&amp; || and or</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/operator.html#存在运算符-in" class="sidebar-link">存在运算符: in</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/operator.html#条件赋值" class="sidebar-link">条件赋值 ?= :=</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/operator.html#实例检查-is-a" class="sidebar-link">实例检查: is a</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/operator.html#变量定义-is-defined" class="sidebar-link">变量定义: is defined</a></li></ul></li><li><a href="/styleProcess/stylus/mixin.html" class="sidebar-link">混写</a></li><li><a href="/styleProcess/stylus/insert.html" class="sidebar-link">插入值</a></li></ul></div></li></ul></div><div class="page"><div class="content"><h1 id="运算符"><a href="#运算符" aria-hidden="true" class="header-anchor">#</a> 运算符</h1><h2 id="运算符优先级"><a href="#运算符优先级" aria-hidden="true" class="header-anchor">#</a> 运算符优先级</h2><p>下面是运算符优先级表，从高到低：</p><pre class="language-text"><code>.
+[]
+!~+-
+is defined
+** * / %
++ -
+... ..
+&lt;= &gt;= &lt; &gt;
+in
+== is != is not isnt
+is a
+&amp;&amp; and || or
+?:
+= := ?= += -=
+not
+if unless
+</code></pre><h2 id="一元表达式"><a href="#一元表达式" aria-hidden="true" class="header-anchor">#</a> 一元表达式</h2><p>下面是一些可用的一元运算符，<code>!</code>,<code>not</code>,<code>-</code>,<code>+</code>,and<code>～</code>。</p><pre class="language-text"><code>!0
+// =&gt; true
+
+!!0
+// =&gt; false
+
+!1
+// =&gt; false
+
+!!5px
+// =&gt; true
+
+-5px
+// =&gt; -5px
+
+--5px
+// =&gt; 5px
+
+not true
+// =&gt; false
+
+not not true
+// =&gt; true
+</code></pre><p>逻辑符<code>not</code>的优先级较低，因此</p><pre class="language-text"><code>a = 0
+b = 1
+
+!a and !b
+// =&gt; false
+//parsed as: (!a) and (!b)
+</code></pre><p>看下面</p><pre class="language-text"><code>not a or b
+// =&gt; false
+// parse as :not (a or b)
+</code></pre><p>##　二元运算符</p><p>下标运算符允许我们去通过索引获取表达式内部值(从零开始)，负值可以从表达式中最后的元素开始。</p><pre class="language-text"><code>list = 1 2 3
+list[0]
+// =&gt; 1
+
+list[-1]
+// =&gt; 3
+</code></pre><p>括号表达式可以充当元组(例如<code>(15px,15px),(1,2,3)</code>):</p><p>下面这个例子是一个使用元组的错误处理(并展示结构的多功能)</p><pre class="language-text"><code>add(a,b)
+    if a is a 'unit' and b is a 'unit'
+        a + b
+    else
+        (error 'a and b must be units!)
+
+body
+    padding add(1,'5')
+    // =&gt; padding:error &quot;a and b must units&quot;
+
+    padding add(1,'5')[0]
+    // =&gt; padding:error;
+
+    padding add(1,'5')[0] == error
+    // =&gt; padding:true;
+
+    padding add(1,'5')[1]
+    // =&gt; padding:&quot;a and b must units&quot;
+</code></pre><p>这是一个更复杂的例子.现在我们执行内置函数<code>error()</code>，当标识符(传入的第一个值)等于<code>error</code>时返回错误信息。</p><pre class="language-text"><code>if(val = add(1,'5'))[5] == error
+    error(val[1])
+</code></pre><h2 id="范围运算符"><a href="#范围运算符" aria-hidden="true" class="header-anchor">#</a> 范围运算符 .. ...</h2><p>同事提供这包括(开放)范围运算符(<code>..</code>)和排除(闭合)范围运算符(<code>...</code>)去扩展表达式:</p><pre class="language-text"><code>1..5
+// =&gt; 1 2 3 4 5
+
+1...5
+// =&gt; 1 2 3 4
+
+5..1
+// =&gt; 5 4 3 2 1
+</code></pre><h2 id="加减运算符"><a href="#加减运算符" aria-hidden="true" class="header-anchor">#</a> 加减运算符: + -</h2><p>二元加减运算符会在运算中将单位进行转换，或使用默认字面值。例如<code>5s-2px</code>结果是<code>3s</code>。</p><pre class="language-text"><code>15px -5px
+// =&gt; 10px
+
+5-2
+// =&gt; 3
+
+5in - 50mm
+// =&gt; 3.3031in
+
+5s - 1000ms
+// =&gt; 4s
+
+20mm + 5in
+// =&gt; 121.6in
+
+&quot;foo &quot; + &quot;bar&quot;
+// =&gt; &quot;foo bar&quot;
+
+&quot;num &quot; + 15
+// =&gt; &quot;num 15&quot;
+</code></pre><h2 id="乘法运算符"><a href="#乘法运算符" aria-hidden="true" class="header-anchor">#</a> 乘法运算符: / * %</h2><pre class="language-text"><code>2000ms + (1s * 2)
+// =&gt; 4000ms
+
+5s/2
+// =&gt; 2.5s
+
+4%2
+// =&gt; 0
+</code></pre><p>当使用<code>/</code>在一个属性值中，你需要用括号包住它，否则<code>/</code>会按字面含义进行处理(支持 CSS<code>line-height</code>):</p><pre class="language-text"><code>font: 14px/1.5
+</code></pre><p>但是下面等同于<code>14px</code>÷ <code>1.5</code>:</p><pre class="language-text"><code>font: (14px/1.5);
+</code></pre><p>这仅在<code>/</code>运算符时需要.</p><h2 id="指数"><a href="#指数" aria-hidden="true" class="header-anchor">#</a> 指数: **</h2><p>下面是指数运算符:</p><pre class="language-text"><code>2 ** 8
+// =&gt; 256
+</code></pre><h2 id="相等和关系运算符"><a href="#相等和关系运算符" aria-hidden="true" class="header-anchor">#</a> 相等和关系运算符 : == != &gt;= &lt;= &gt;&lt;</h2><p>相等运算符可以用在等同的单位，颜色，字符串甚至标识符上。这是一个强大的概念，甚至任意的标识符(像<code>wahoo</code>)可以被当做原子使用。方法可能返回<code>yes</code>或<code>no</code>来代替<code>true</code>和<code>false</code>(但这是不建议的).</p><pre class="language-text"><code>5 == 5
+// =&gt; true
+
+10 &gt; 5
+// =&gt; true
+
+#fff == #fff
+// =&gt; true
+
+true == false
+// =&gt; false
+
+wahoo == yay
+// =&gt; false
+
+wahoo == wahoo
+// =&gt; true
+
+&quot;test&quot; == &quot;test&quot;
+// =&gt; true
+
+true is true
+// =&gt; true
+
+'hey' is not 'bye'
+// =&gt; true
+
+'hey' isnt 'bye'
+// =&gt; true
+
+(foo bar) == (foo bar)
+// =&gt; true
+
+(1 2 3) == (1 2 3)
+// =&gt; true
+
+(1 2 3) == (1 1 3)
+// =&gt; false
+</code></pre><p>只有精确地值才可以匹配.例如,<code>0 == false</code> 和 <code>null = false</code> 都是 <code>false</code>.</p><p>别名:</p><pre class="language-text"><code>== is
+!= is not
+!= isnt
+</code></pre><h2 id="真实性"><a href="#真实性" aria-hidden="true" class="header-anchor">#</a> 真实性</h2><p>在 Stylus 中几乎大多数都会被解析成<code>true</code>,包括单位后缀，甚至<code>0%</code>,<code>0px</code>,等都将会被解析为<code>true</code>(因为这在 Stylus 的混合书写和函数中认为单位是有效的是很常见的)</p><p>然而,<code>0</code>本身在算数中就是<code>false</code>。</p><p>表达式(或者列表)长度大于 1 时，被认为是真。</p><p><code>true</code>的例子:</p><pre class="language-text"><code>0%
+0px
+1px
+-1
+-1px
+hey
+'hey'
+(0 0 0)
+(&quot; &quot;)
+</code></pre><p><code>false</code>的例子:</p><pre class="language-text"><code>0
+nullfalser
+''
+</code></pre><h2 id="逻辑运算符-and-or"><a href="#逻辑运算符-and-or" aria-hidden="true" class="header-anchor">#</a> 逻辑运算符: &amp;&amp; || and or</h2><p>逻辑运算符<code>&amp;&amp;</code>和<code>||</code>的别名是<code>and</code>和<code>or</code>,它们优先级相同.</p><pre class="language-text"><code>5 &amp;&amp; 3
+// =&gt; 3
+
+0 || 5
+// =&gt; 5
+
+0 &amp;&amp; 5
+// =&gt; 0
+
+#fff is a 'rgba' and 15 is 'unit'
+// =&gt; true
+</code></pre><h2 id="存在运算符-in"><a href="#存在运算符-in" aria-hidden="true" class="header-anchor">#</a> 存在运算符: in</h2><p>检查运算符左边的内容是否存在于运算符右边的表达式中.</p><p>简单的例子:</p><pre class="language-text"><code>nums = 1 2 3
+1 in nums
+// =&gt; true
+
+5 in nums
+// =&gt; false
+</code></pre><p>一些未定义的标识符:</p><pre class="language-text"><code>words = foo bar baz
+bar in words
+// =&gt; bar
+
+HEY in words
+// =&gt; false
+</code></pre><p>同样可以用在元组中:</p><pre class="language-text"><code>vals = (error 'one')(error 'two')
+error in vals
+// =&gt; false
+
+(error 'one') in vals
+// =&gt; true
+
+(error 'two') in vals
+// =&gt; true
+
+(error 'something') in vals
+// =&gt; false
+</code></pre><p>在混合书写中的例子:</p><pre class="language-text"><code>pad(types = padding,n=5px)
+    if padding in types
+        padding n
+    if margin in types
+        margin n
+
+body
+    pad()
+
+body
+    pad(margin)
+
+body
+    pad(padding margin,10px)
+</code></pre><p>解析为:</p><pre class="language-text"><code>body{
+    padding:5px;
+}
+
+body{
+    margin:5px;
+}
+body{
+    padding:10px;
+    margin:10px;
+}
+</code></pre><h2 id="条件赋值"><a href="#条件赋值" aria-hidden="true" class="header-anchor">#</a> 条件赋值 ?= :=</h2><p>条件赋值运算符<code>?=</code>（别名是<code>:=</code>)，让我们定义变量不需要去破坏原来的值(如果存在的话)。这个操作运算符可以扩展为三元中的一个<code>is defined</code>的二元操作。</p><p>例如,下面是相等的：</p><pre class="language-text"><code>color:=white
+color?=white
+color = color is denfind ? color : white
+</code></pre><p>当使用<code>=</code>时，可以简单的赋值:</p><pre class="language-text"><code>color = white
+color = black
+
+color
+// =&gt; black
+</code></pre><p>但是当使用<code>?=</code>时，我们第二行就没有效果了(当变量已经被定义):</p><pre class="language-text"><code>color = white
+color ?= black
+
+color
+// =&gt; black
+</code></pre><h2 id="实例检查-is-a"><a href="#实例检查-is-a" aria-hidden="true" class="header-anchor">#</a> 实例检查: is a</h2><p>Stylus 提供一个二元操作符是<code>is a</code>用于类型检测。</p><pre class="language-text"><code>15 is a 'unit'
+// =&gt; true
+
+#fff is a 'rgba'
+// =&gt; true
+
+15 is a `rgba'
+// =&gt; false
+</code></pre><p>或者我们可以使用内置函数<code>type()</code></p><pre class="language-text"><code>type(#fff) == `rgba`
+// =&gt; true
+</code></pre><p>注意:<code>color</code>是唯一的特殊情况，运算符左侧是<code>RGBA</code>或<code>HSLA</code>时，他都为<code>true</code>.</p><h2 id="变量定义-is-defined"><a href="#变量定义-is-defined" aria-hidden="true" class="header-anchor">#</a> 变量定义: is defined</h2></div><!----><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/styleProcess/stylus/selector.html" class="prev">
+          选择器
+        </a></span><span class="next"><a href="/styleProcess/stylus/mixin.html">
+          混写
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/styleProcess/assets/js/2.a8afffa5.js" defer></script><script src="/styleProcess/assets/js/app.e3b621a4.js" defer></script>
+  </body>
+</html>

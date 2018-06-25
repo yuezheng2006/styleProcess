@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>css预处理器 | 变量</title>
+    <meta name="description" content="css预处理语言 使用总结">
+    <link rel="icon" href="/styleProcess/logo.png">
+  <link rel="manifest" href="/styleProcess/manifest.json">
+    
+    <link rel="preload" href="/styleProcess/assets/css/18.styles.3e9f533d.css" as="style"><link rel="preload" href="/styleProcess/assets/js/app.e3b621a4.js" as="script"><link rel="preload" href="/styleProcess/assets/js/9.d0f68f7e.js" as="script"><link rel="prefetch" href="/styleProcess/assets/js/10.185f2d56.js"><link rel="prefetch" href="/styleProcess/assets/js/1.625c0169.js"><link rel="prefetch" href="/styleProcess/assets/js/2.a8afffa5.js"><link rel="prefetch" href="/styleProcess/assets/js/3.09429867.js"><link rel="prefetch" href="/styleProcess/assets/js/4.dec1ca9b.js"><link rel="prefetch" href="/styleProcess/assets/js/5.10e73ff7.js"><link rel="prefetch" href="/styleProcess/assets/js/6.4543c32a.js"><link rel="prefetch" href="/styleProcess/assets/js/7.93e00f2e.js"><link rel="prefetch" href="/styleProcess/assets/js/8.0e7f02cd.js"><link rel="prefetch" href="/styleProcess/assets/js/0.8a921080.js"><link rel="prefetch" href="/styleProcess/assets/js/11.b1e4c8db.js"><link rel="prefetch" href="/styleProcess/assets/js/12.3ada07ed.js"><link rel="prefetch" href="/styleProcess/assets/js/13.54014618.js"><link rel="prefetch" href="/styleProcess/assets/js/14.47e7d96b.js"><link rel="prefetch" href="/styleProcess/assets/js/15.0ae7a566.js"><link rel="prefetch" href="/styleProcess/assets/js/16.5d215985.js"><link rel="prefetch" href="/styleProcess/assets/js/17.f41f3037.js">
+    <link rel="stylesheet" href="/styleProcess/assets/css/18.styles.3e9f533d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/styleProcess/" class="home-link router-link-active"><!----><span class="site-name">
+      css预处理器
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>less语法总结</span><!----></p><ul class="sidebar-group-items"><li><a href="/styleProcess/less/" class="sidebar-link">less了解</a></li><li><a href="/styleProcess/less/var.html" class="active sidebar-link">变量</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/styleProcess/less/var.html#变量插入" class="sidebar-link">变量插入</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/styleProcess/less/var.html#选择器" class="sidebar-link">选择器</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/var.html#链接" class="sidebar-link">链接</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/var.html#文件引用" class="sidebar-link">文件引用</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/var.html#属性" class="sidebar-link">属性</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/var.html#变量名" class="sidebar-link">变量名</a></li></ul></li><li class="sidebar-sub-header"><a href="/styleProcess/less/var.html#懒加载（lazy-load）" class="sidebar-link">懒加载（Lazy Load）</a></li></ul></li><li><a href="/styleProcess/less/loop.html" class="sidebar-link">循环</a></li><li><a href="/styleProcess/less/mixin.html" class="sidebar-link">混入</a></li><li><a href="/styleProcess/less/parent.html" class="sidebar-link">父选择</a></li><li><a href="/styleProcess/less/import.html" class="sidebar-link">引用</a></li><li><a href="/styleProcess/less/combine.html" class="sidebar-link">合并</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>sass语法使用</span><span class="arrow right"></span></p><!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>stylus语法使用</span><span class="arrow right"></span></p><!----></div></li></ul></div><div class="page"><div class="content"><h1 id="变量"><a href="#变量" aria-hidden="true" class="header-anchor">#</a> 变量</h1><p>如果多次使用同一值，可将其抽离为变量，更易维护：</p><pre class="language-less"><code><span class="token selector">a,
+.link</span><span class="token punctuation">{</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.widget</span><span class="token punctuation">{</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+	<span class="token property">background</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>可改写：</p><pre class="language-less"><code><span class="token comment">// 变量声明</span>
+<span class="token variable">@link-color<span class="token punctuation">:</span></span> black<span class="token punctuation">;</span>
+<span class="token variable">@link-color-hover<span class="token punctuation">:</span></span> <span class="token function">darken</span><span class="token punctuation">(</span><span class="token variable">@link-color</span><span class="token punctuation">,</span> 10%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token comment">//变量使用</span>
+<span class="token selector">a,
+.link</span><span class="token punctuation">{</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">@link-color</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">a:hover</span><span class="token punctuation">{</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">@link-color-hover</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.widget</span><span class="token punctuation">{</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+	<span class="token property">background</span><span class="token punctuation">:</span> <span class="token variable">@link-color</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="变量插入"><a href="#变量插入" aria-hidden="true" class="header-anchor">#</a> 变量插入</h2><h3 id="选择器"><a href="#选择器" aria-hidden="true" class="header-anchor">#</a> 选择器</h3><pre class="language-less"><code><span class="token comment">// 变量声明</span>
+<span class="token variable">@my-selector<span class="token punctuation">:</span></span> banner<span class="token punctuation">;</span>
+<span class="token comment">// 变量使用</span>
+<span class="token selector">.@{my-selector}</span> <span class="token punctuation">{</span>
+	<span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+	<span class="token property">line-height</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
+	<span class="token property">margin</span>     <span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.banner</span> <span class="token punctuation">{</span>
+	<span class="token property">font-weight</span><span class="token punctuation">:</span> bold<span class="token punctuation">;</span>
+	<span class="token property">line-height</span><span class="token punctuation">:</span> 40px<span class="token punctuation">;</span>
+	<span class="token property">margin</span>     <span class="token punctuation">:</span> 0 auto<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="链接"><a href="#链接" aria-hidden="true" class="header-anchor">#</a> 链接</h3><pre class="language-less"><code><span class="token comment">// 变量声明</span>
+<span class="token variable">@images<span class="token punctuation">:</span></span> <span class="token string">&quot;../img&quot;</span><span class="token punctuation">;</span>
+<span class="token comment">// 变量使用</span>
+<span class="token selector">body</span> <span class="token punctuation">{</span>
+	<span class="token property">color</span>     <span class="token punctuation">:</span> #444<span class="token punctuation">;</span>
+	<span class="token property">background</span><span class="token punctuation">:</span> <span class="token url">url(&quot;@{images}/white-sand.png&quot;)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="文件引用"><a href="#文件引用" aria-hidden="true" class="header-anchor">#</a> 文件引用</h3><pre class="language-less"><code><span class="token comment">// 变量声明</span>
+<span class="token variable">@themes<span class="token punctuation">:</span></span> <span class="token string">&quot;../src/themes&quot;</span><span class="token punctuation">;</span>
+<span class="token comment">// 变量使用</span>
+<span class="token atrule">@import &quot;@</span><span class="token punctuation">{</span>themes<span class="token punctuation">}</span><span class="token operator">/</span>tidal<span class="token operator">-</span>wave.less&quot;<span class="token punctuation">;</span>
+</code></pre><h3 id="属性"><a href="#属性" aria-hidden="true" class="header-anchor">#</a> 属性</h3><pre class="language-less"><code><span class="token variable">@property<span class="token punctuation">:</span></span> color<span class="token punctuation">;</span>
+<span class="token selector">.widget</span> <span class="token punctuation">{</span>
+	<span class="token property">@{property}</span>           <span class="token punctuation">:</span> #0ee<span class="token punctuation">;</span>
+	<span class="token property">background-@{property}</span><span class="token punctuation">:</span> #999<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.widget</span> <span class="token punctuation">{</span>
+	<span class="token property">color</span>           <span class="token punctuation">:</span> #0ee<span class="token punctuation">;</span>
+	<span class="token property">background-color</span><span class="token punctuation">:</span> #999<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="变量名"><a href="#变量名" aria-hidden="true" class="header-anchor">#</a> 变量名</h3><p>甚至可使用变量名命名变量：(当然实际使用中不要使用这么坑的写法哦)</p><pre class="language-less"><code><span class="token variable">@fnord<span class="token punctuation">:</span></span> <span class="token string">&quot;I am fnord.&quot;</span><span class="token punctuation">;</span>
+<span class="token variable">@var<span class="token punctuation">:</span></span> <span class="token string">&quot;fnord&quot;</span><span class="token punctuation">;</span>
+<span class="token selector">section</span><span class="token punctuation">{</span>
+	<span class="token property">content</span><span class="token punctuation">:</span> <span class="token variable">@@var</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">section</span><span class="token punctuation">{</span>
+	<span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">&quot;I am fnord.&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="懒加载（lazy-load）"><a href="#懒加载（lazy-load）" aria-hidden="true" class="header-anchor">#</a> 懒加载（Lazy Load）</h2><p>变量可先使用，再声明。</p><pre class="language-less"><code><span class="token selector">.lazy-eval-scope</span><span class="token punctuation">{</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> <span class="token variable">@var</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token variable">@var<span class="token punctuation">:</span></span> <span class="token variable">@a</span><span class="token punctuation">;</span>
+<span class="token variable">@a<span class="token punctuation">:</span></span> 9%<span class="token punctuation">;</span>
+</code></pre><p>和</p><pre class="language-less"><code><span class="token selector">.lazy-eval-scope</span><span class="token punctuation">{</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> <span class="token variable">@var</span><span class="token punctuation">;</span>
+	<span class="token variable">@a<span class="token punctuation">:</span></span> 9%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token variable">@var<span class="token punctuation">:</span></span> <span class="token variable">@a</span><span class="token punctuation">;</span>
+<span class="token variable">@a<span class="token punctuation">:</span></span> 100%<span class="token punctuation">;</span>
+</code></pre><p>都编译为：</p><pre class="language-css"><code><span class="token selector">.lazy-eval-scope</span><span class="token punctuation">{</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> 9%<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>如果变量多次定义，以最后一次声明为准。使用时由作用域向上查找。比如：</p><pre class="language-less"><code><span class="token variable">@var<span class="token punctuation">:</span></span> 0<span class="token punctuation">;</span>
+<span class="token selector">.class</span> <span class="token punctuation">{</span>
+	<span class="token variable">@var<span class="token punctuation">:</span></span> 1<span class="token punctuation">;</span>
+	<span class="token selector">.brass</span> <span class="token punctuation">{</span>
+		<span class="token variable">@var <span class="token punctuation">:</span></span> 2<span class="token punctuation">;</span>
+		<span class="token property">three</span><span class="token punctuation">:</span> <span class="token variable">@var</span><span class="token punctuation">;</span>
+		<span class="token variable">@var <span class="token punctuation">:</span></span> 3<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token property">one</span> <span class="token punctuation">:</span> <span class="token variable">@var</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译结果为：</p><pre class="language-css"><code><span class="token selector">.class</span><span class="token punctuation">{</span>
+	<span class="token property">one</span><span class="token punctuation">:</span> 1<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.class .brass</span><span class="token punctuation">{</span>
+	<span class="token property">three</span><span class="token punctuation">:</span> 3<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><!----><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/styleProcess/less/" class="prev router-link-active">
+          less了解
+        </a></span><span class="next"><a href="/styleProcess/less/loop.html">
+          循环
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/styleProcess/assets/js/9.d0f68f7e.js" defer></script><script src="/styleProcess/assets/js/app.e3b621a4.js" defer></script>
+  </body>
+</html>

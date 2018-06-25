@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>css预处理器 | 混合书写（Mixins)</title>
+    <meta name="description" content="css预处理语言 使用总结">
+    <link rel="icon" href="/styleProcess/logo.png">
+  <link rel="manifest" href="/styleProcess/manifest.json">
+    
+    <link rel="preload" href="/styleProcess/assets/css/18.styles.3e9f533d.css" as="style"><link rel="preload" href="/styleProcess/assets/js/app.e3b621a4.js" as="script"><link rel="preload" href="/styleProcess/assets/js/3.09429867.js" as="script"><link rel="prefetch" href="/styleProcess/assets/js/10.185f2d56.js"><link rel="prefetch" href="/styleProcess/assets/js/1.625c0169.js"><link rel="prefetch" href="/styleProcess/assets/js/2.a8afffa5.js"><link rel="prefetch" href="/styleProcess/assets/js/4.dec1ca9b.js"><link rel="prefetch" href="/styleProcess/assets/js/5.10e73ff7.js"><link rel="prefetch" href="/styleProcess/assets/js/6.4543c32a.js"><link rel="prefetch" href="/styleProcess/assets/js/7.93e00f2e.js"><link rel="prefetch" href="/styleProcess/assets/js/8.0e7f02cd.js"><link rel="prefetch" href="/styleProcess/assets/js/9.d0f68f7e.js"><link rel="prefetch" href="/styleProcess/assets/js/0.8a921080.js"><link rel="prefetch" href="/styleProcess/assets/js/11.b1e4c8db.js"><link rel="prefetch" href="/styleProcess/assets/js/12.3ada07ed.js"><link rel="prefetch" href="/styleProcess/assets/js/13.54014618.js"><link rel="prefetch" href="/styleProcess/assets/js/14.47e7d96b.js"><link rel="prefetch" href="/styleProcess/assets/js/15.0ae7a566.js"><link rel="prefetch" href="/styleProcess/assets/js/16.5d215985.js"><link rel="prefetch" href="/styleProcess/assets/js/17.f41f3037.js">
+    <link rel="stylesheet" href="/styleProcess/assets/css/18.styles.3e9f533d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/styleProcess/" class="home-link router-link-active"><!----><span class="site-name">
+      css预处理器
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading"><span>less语法总结</span><!----></p><ul class="sidebar-group-items"><li><a href="/styleProcess/less/" class="sidebar-link">less了解</a></li><li><a href="/styleProcess/less/var.html" class="sidebar-link">变量</a></li><li><a href="/styleProcess/less/loop.html" class="sidebar-link">循环</a></li><li><a href="/styleProcess/less/mixin.html" class="sidebar-link">混入</a></li><li><a href="/styleProcess/less/parent.html" class="sidebar-link">父选择</a></li><li><a href="/styleProcess/less/import.html" class="sidebar-link">引用</a></li><li><a href="/styleProcess/less/combine.html" class="sidebar-link">合并</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>sass语法使用</span><span class="arrow right"></span></p><!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading open"><span>stylus语法使用</span><span class="arrow down"></span></p><ul class="sidebar-group-items"><li><a href="/styleProcess/stylus/" class="sidebar-link">stylus了解</a></li><li><a href="/styleProcess/stylus/var.html" class="sidebar-link">变量</a></li><li><a href="/styleProcess/stylus/selector.html" class="sidebar-link">选择器</a></li><li><a href="/styleProcess/stylus/operator.html" class="sidebar-link">运算符</a></li><li><a href="/styleProcess/stylus/mixin.html" class="active sidebar-link">混写</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/styleProcess/stylus/mixin.html#混入" class="sidebar-link">混入</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/mixin.html#父级引用" class="sidebar-link">父级引用</a></li><li class="sidebar-sub-header"><a href="/styleProcess/stylus/mixin.html#混合书写互调" class="sidebar-link">混合书写互调</a></li></ul></li><li><a href="/styleProcess/stylus/insert.html" class="sidebar-link">插入值</a></li></ul></div></li></ul></div><div class="page"><div class="content"><h1 id="混合书写（mixins"><a href="#混合书写（mixins" aria-hidden="true" class="header-anchor">#</a> 混合书写（Mixins)</h1><h2 id="混入"><a href="#混入" aria-hidden="true" class="header-anchor">#</a> 混入</h2><p>下混入和函数定义方法一致，但是应用却大相径庭。</p><p>例如，下面有定义的 border-radius(n)方法，其却作为一个 mixin（如，作为状态调用，而非表达式）调用。</p><p>当 border-radius()选择器中调用时候，属性会被扩展并复制在选择器中</p><pre class="language-stylus"><code><span class="token func"><span class="token function">border-radius</span><span class="token punctuation">(</span>n<span class="token punctuation">)</span></span>
+  <span class="token property-declaration"><span class="token property">-webkit-border-radius</span> n</span>
+  <span class="token property-declaration"><span class="token property">-moz-border-radius</span> n</span>
+  <span class="token property-declaration"><span class="token property">border-radius</span> n</span>
+
+<span class="token selector">form input[type=button]</span>
+  <span class="token func"><span class="token function">border-radius</span><span class="token punctuation">(</span><span class="token number">5</span>px<span class="token punctuation">)</span></span>
+</code></pre><p>便以结果 css:</p><pre class="language-css"><code><span class="token selector">form input[type=&quot;button&quot;]</span> <span class="token punctuation">{</span>
+  <span class="token property">-webkit-border-radius</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+  <span class="token property">-moz-border-radius</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+  <span class="token property">border-radius</span><span class="token punctuation">:</span> 5px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>使用混入书写，你可以完全忽略括号，提供梦幻般私有属性的支持。混合书写中的 border-radius 当作了属性，而不是一个递归函数调用。更进一步，我们可以利用 arguments 这个局部变量，传递可以包含多值的表达式。</p><pre class="language-stylus"><code><span class="token func"><span class="token function">border-radius</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+  <span class="token property-declaration"><span class="token property">-webkit-border-radius</span> arguments</span>
+  <span class="token property-declaration"><span class="token property">-moz-border-radius</span> arguments</span>
+  <span class="token property-declaration"><span class="token property">border-radius</span> arguments</span>
+</code></pre><h2 id="父级引用"><a href="#父级引用" aria-hidden="true" class="header-anchor">#</a> 父级引用</h2><p>混合书写可以利用父级引用字符&amp;, 继承父业而不是自己筑巢。</p><p>例如，我们要用 stripe(even, odd)创建一个条纹表格。even 和 odd 均提供了默认颜色值，每行也指定了 background-color 属性。我们可以在 tr 嵌套中使用&amp;来引用 tr，以提供 even 颜色。</p><pre class="language-stylus"><code><span class="token func"><span class="token function">stripe</span><span class="token punctuation">(</span>even <span class="token operator">=</span> <span class="token hexcode">#fff</span><span class="token punctuation">,</span> odd <span class="token operator">=</span> <span class="token hexcode">#eee</span><span class="token punctuation">)</span></span>
+ <span class="token selector">tr</span>
+   <span class="token property-declaration"><span class="token property">background-color</span> odd</span>
+   <span class="token selector">&amp;.even
+   &amp;:nth-child(even)</span>
+       <span class="token property-declaration"><span class="token property">background-color</span> even</span>
+</code></pre><p>调用混合书写</p><pre class="language-stylus"><code><span class="token selector">table</span>
+  <span class="token func"><span class="token function">stripe</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+  <span class="token selector">td</span>
+    <span class="token property-declaration"><span class="token property">padding</span> <span class="token number">4</span>px <span class="token number">10</span>px</span>
+
+<span class="token selector">table#users</span>
+  <span class="token func"><span class="token function">stripe</span><span class="token punctuation">(</span><span class="token hexcode">#303030</span><span class="token punctuation">,</span> <span class="token hexcode">#494848</span><span class="token punctuation">)</span></span>
+  <span class="token selector">td</span>
+    <span class="token property-declaration"><span class="token property">color</span> white</span>
+</code></pre><h2 id="混合书写互调"><a href="#混合书写互调" aria-hidden="true" class="header-anchor">#</a> 混合书写互调</h2><pre class="language-stylus"><code><span class="token func"><span class="token function">inline-list</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+  <span class="token selector">li</span>
+    <span class="token property-declaration"><span class="token property">display</span> inline</span>
+
+<span class="token func"><span class="token function">comma-list</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+  <span class="token func"><span class="token function">inline-list</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+  <span class="token selector">li</span>
+    <span class="token selector">&amp;:after</span>
+      <span class="token property-declaration"><span class="token property">content</span> <span class="token string">', '</span></span>
+      
+    <span class="token selector">&amp;:last-child:after</span>
+      <span class="token property-declaration"><span class="token property">content</span> <span class="token string">''</span></span>
+<span class="token selector">ul</span>
+  <span class="token func"><span class="token function">comma-list</span><span class="token punctuation">(</span><span class="token punctuation">)</span></span>
+</code></pre><p>编译后 css:</p><pre class="language-css"><code><span class="token selector">ul li:after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">&quot;, &quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">ul li:last-child:after</span> <span class="token punctuation">{</span>
+  <span class="token property">content</span><span class="token punctuation">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">ul li</span> <span class="token punctuation">{</span>
+  <span class="token property">display</span><span class="token punctuation">:</span> inline<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre></div><!----><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/styleProcess/stylus/operator.html" class="prev">
+          运算符
+        </a></span><span class="next"><a href="/styleProcess/stylus/insert.html">
+          插入值
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/styleProcess/assets/js/3.09429867.js" defer></script><script src="/styleProcess/assets/js/app.e3b621a4.js" defer></script>
+  </body>
+</html>

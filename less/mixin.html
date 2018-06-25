@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>css预处理器 | 混合器（mixin）</title>
+    <meta name="description" content="css预处理语言 使用总结">
+    <link rel="icon" href="/styleProcess/logo.png">
+  <link rel="manifest" href="/styleProcess/manifest.json">
+    
+    <link rel="preload" href="/styleProcess/assets/css/18.styles.3e9f533d.css" as="style"><link rel="preload" href="/styleProcess/assets/js/app.e3b621a4.js" as="script"><link rel="preload" href="/styleProcess/assets/js/11.b1e4c8db.js" as="script"><link rel="prefetch" href="/styleProcess/assets/js/10.185f2d56.js"><link rel="prefetch" href="/styleProcess/assets/js/1.625c0169.js"><link rel="prefetch" href="/styleProcess/assets/js/2.a8afffa5.js"><link rel="prefetch" href="/styleProcess/assets/js/3.09429867.js"><link rel="prefetch" href="/styleProcess/assets/js/4.dec1ca9b.js"><link rel="prefetch" href="/styleProcess/assets/js/5.10e73ff7.js"><link rel="prefetch" href="/styleProcess/assets/js/6.4543c32a.js"><link rel="prefetch" href="/styleProcess/assets/js/7.93e00f2e.js"><link rel="prefetch" href="/styleProcess/assets/js/8.0e7f02cd.js"><link rel="prefetch" href="/styleProcess/assets/js/9.d0f68f7e.js"><link rel="prefetch" href="/styleProcess/assets/js/0.8a921080.js"><link rel="prefetch" href="/styleProcess/assets/js/12.3ada07ed.js"><link rel="prefetch" href="/styleProcess/assets/js/13.54014618.js"><link rel="prefetch" href="/styleProcess/assets/js/14.47e7d96b.js"><link rel="prefetch" href="/styleProcess/assets/js/15.0ae7a566.js"><link rel="prefetch" href="/styleProcess/assets/js/16.5d215985.js"><link rel="prefetch" href="/styleProcess/assets/js/17.f41f3037.js">
+    <link rel="stylesheet" href="/styleProcess/assets/css/18.styles.3e9f533d.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div><a href="/styleProcess/" class="home-link router-link-active"><!----><span class="site-name">
+      css预处理器
+    </span></a><div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""><!----></div><nav class="nav-links can-hide"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav></div></header><div class="sidebar-mask"></div><div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/styleProcess/" class="nav-link">首页</a></div><div class="nav-item"><a href="https://github.com/yuezheng2006" target="_blank" rel="noopener noreferrer" class="nav-link">Github</a></div><!----></nav><ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>less语法总结</span><!----></p><ul class="sidebar-group-items"><li><a href="/styleProcess/less/" class="sidebar-link">less了解</a></li><li><a href="/styleProcess/less/var.html" class="sidebar-link">变量</a></li><li><a href="/styleProcess/less/loop.html" class="sidebar-link">循环</a></li><li><a href="/styleProcess/less/mixin.html" class="active sidebar-link">混入</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#不输出混合器自身" class="sidebar-link">不输出混合器自身</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#混合器中嵌套选择器" class="sidebar-link">混合器中嵌套选择器</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#命名空间（namespace）" class="sidebar-link">命名空间（namespace）</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#带条件的命名空间（guarded-namespaces）" class="sidebar-link">带条件的命名空间（Guarded Namespaces）</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#improtant关键字" class="sidebar-link">`!improtant`关键字</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#带多个参数的混合器" class="sidebar-link">带多个参数的混合器</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#默认参数" class="sidebar-link">默认参数</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#arguments变量" class="sidebar-link">`@arguments`变量</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#rest变量" class="sidebar-link">`@rest`变量</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#模式匹配" class="sidebar-link">模式匹配</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#混合器的“返回值”" class="sidebar-link">混合器的“返回值”</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#非绑定属性声明集（detached-ruleset）" class="sidebar-link">非绑定属性声明集（Detached Ruleset）</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#作用域" class="sidebar-link">作用域</a></li></ul></li><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#比较操作符" class="sidebar-link">比较操作符</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#逻辑操作符" class="sidebar-link">逻辑操作符</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#逻辑与：and" class="sidebar-link">逻辑与：`and`</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#逻辑或：or" class="sidebar-link">逻辑或：`or`</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#逻辑非：not" class="sidebar-link">逻辑非：`not`</a></li></ul></li><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#类型检测" class="sidebar-link">类型检测</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#default-函数" class="sidebar-link">`default()`函数</a></li><li class="sidebar-sub-header"><a href="/styleProcess/less/mixin.html#带条件的css选择器" class="sidebar-link">带条件的CSS选择器</a></li></ul></li><li><a href="/styleProcess/less/parent.html" class="sidebar-link">父选择</a></li><li><a href="/styleProcess/less/import.html" class="sidebar-link">引用</a></li><li><a href="/styleProcess/less/combine.html" class="sidebar-link">合并</a></li></ul></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>sass语法使用</span><span class="arrow right"></span></p><!----></div></li><li><div class="sidebar-group collapsable"><p class="sidebar-heading"><span>stylus语法使用</span><span class="arrow right"></span></p><!----></div></li></ul></div><div class="page"><div class="content"><h1 id="混合器（mixin）"><a href="#混合器（mixin）" aria-hidden="true" class="header-anchor">#</a> 混合器（mixin）</h1><p>ID和class选择器，以及非绑定属性声明集都可作为混合器：</p><pre class="language-less"><code><span class="token selector">#id,
+.a</span> <span class="token punctuation">{</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.mixin-class</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.mixin-id</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">#id</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">#id,
+.a</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.mixin-class</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.mixin-id</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>使用混合器时，后面的小括号可省（非绑定属性声明集除外），下面两种写法等价：</p><pre class="language-less"><code><span class="token selector">body</span><span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.a</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">body</span><span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.a</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="不输出混合器自身"><a href="#不输出混合器自身" aria-hidden="true" class="header-anchor">#</a> 不输出混合器自身</h2><p>如果需要使用混合器，但又不将其输出，可在声明时后面紧跟小括号：</p><pre class="language-less"><code><span class="token selector">.my-mixin</span> <span class="token punctuation">{</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.my-other-mixin()</span> <span class="token punctuation">{</span>
+	<span class="token property">background</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.class</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.my-mixin</span><span class="token punctuation">;</span>
+	<span class="token mixin-usage function">.my-other-mixin</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.my-mixin</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.class</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+  <span class="token property">background</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="混合器中嵌套选择器"><a href="#混合器中嵌套选择器" aria-hidden="true" class="header-anchor">#</a> 混合器中嵌套选择器</h2><p>混合器中不只是可含属性声明，同样可嵌套选择器：</p><pre class="language-less"><code><span class="token selector">.my-hover-mixin()</span> <span class="token punctuation">{</span>
+	<span class="token selector">&amp;:hover</span> <span class="token punctuation">{</span>
+		<span class="token property">border</span><span class="token punctuation">:</span> 1px solid blue<span class="token punctuation">;</span>
+		<span class="token selector">a</span> <span class="token punctuation">{</span>
+			<span class="token property">font-size</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">button</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.my-hover-mixin</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">button:hover</span> <span class="token punctuation">{</span>
+  <span class="token property">border</span><span class="token punctuation">:</span> 1px solid blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">button:hover a</span> <span class="token punctuation">{</span>
+  <span class="token property">font-size</span><span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="命名空间（namespace）"><a href="#命名空间（namespace）" aria-hidden="true" class="header-anchor">#</a> 命名空间（namespace）</h2><p>某些情况下，只需使用混合其中嵌套的规则：</p><pre class="language-less"><code><span class="token selector">#outer()</span> <span class="token punctuation">{</span>
+	<span class="token selector">.inner</span> <span class="token punctuation">{</span>
+		<span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+		<span class="token selector">.inner-most</span> <span class="token punctuation">{</span>
+			<span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+		<span class="token punctuation">}</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.c</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">#outer &gt; .inner</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.c</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.c .inner-most</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>其中<code>&gt;</code>和空格可选，下例等价：</p><pre class="language-less"><code><span class="token selector">.c</span><span class="token punctuation">{</span>
+	<span class="token mixin-usage function">#outer .inner</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">.c</span><span class="token punctuation">{</span>
+	<span class="token mixin-usage function">#outer.inner</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>如需使用嵌套2层以上的选择器（如<code>.inner-most</code>），不能跳过其父选择器：</p><pre class="language-less"><code><span class="token selector">.c</span><span class="token punctuation">{</span>
+	<span class="token mixin-usage function">#outer &gt; .inner &gt; .inner-most</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>或者：</p><pre class="language-less"><code><span class="token selector">.c</span><span class="token punctuation">{</span>
+	<span class="token mixin-usage function">#outer .inner .inner-most</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>或者：</p><pre class="language-less"><code><span class="token selector">.c</span><span class="token punctuation">{</span>
+	<span class="token mixin-usage function">#outer.inner.inner-most</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>都可。而下例不可：</p><pre class="language-less"><code><span class="token selector">.c</span><span class="token punctuation">{</span>
+	<span class="token mixin-usage function">#outer .inner-most</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="带条件的命名空间（guarded-namespaces）"><a href="#带条件的命名空间（guarded-namespaces）" aria-hidden="true" class="header-anchor">#</a> 带条件的命名空间（Guarded Namespaces）</h2><h2 id="improtant关键字"><a href="#improtant关键字" aria-hidden="true" class="header-anchor">#</a><code>!improtant</code>关键字</h2><p>使用混合器时，如声明<code>!important</code>关键字，生成的所有属性都会带上<code>!important</code>关键字：</p><pre class="language-less"><code><span class="token selector">.foo()</span> <span class="token punctuation">{</span>
+	<span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+	<span class="token property">color</span>           <span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.unimportant</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.important</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token important">!important</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.unimportant</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.important</span> <span class="token punctuation">{</span>
+  <span class="token property">background-color</span><span class="token punctuation">:</span> yellow <span class="token important">!important</span><span class="token punctuation">;</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> black <span class="token important">!important</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h1 id="将混合器作为函数"><a href="#将混合器作为函数" aria-hidden="true" class="header-anchor">#</a> 将混合器作为函数</h1><p>混合器可带参数：</p><pre class="language-less"><code><span class="token selector">.border-radius(<span class="token variable">@radius</span>)</span> <span class="token punctuation">{</span>
+	<span class="token property">-webkit-border-radius</span><span class="token punctuation">:</span> <span class="token variable">@radius</span><span class="token punctuation">;</span>
+	<span class="token property">-moz-border-radius</span>   <span class="token punctuation">:</span> <span class="token variable">@radius</span><span class="token punctuation">;</span>
+	<span class="token property">border-radius</span>        <span class="token punctuation">:</span> <span class="token variable">@radius</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">#header</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.border-radius</span><span class="token punctuation">(</span>4px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">#bottom</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.border-radius</span><span class="token punctuation">(</span>10px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">#header</span> <span class="token punctuation">{</span>
+	<span class="token property">-webkit-border-radius</span><span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+	<span class="token property">-moz-border-radius</span>   <span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+	<span class="token property">border-radius</span>        <span class="token punctuation">:</span> 4px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">#bottom</span> <span class="token punctuation">{</span>
+	<span class="token property">-webkit-border-radius</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+	<span class="token property">-moz-border-radius</span>   <span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+	<span class="token property">border-radius</span>        <span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>所带参数可是默认参数：</p><pre class="language-less"><code><span class="token selector">.border-radius(<span class="token variable">@radius</span>:5px)</span> <span class="token punctuation">{</span>
+	<span class="token property">-webkit-border-radius</span><span class="token punctuation">:</span> <span class="token variable">@radius</span><span class="token punctuation">;</span>
+	<span class="token property">-moz-border-radius</span>   <span class="token punctuation">:</span> <span class="token variable">@radius</span><span class="token punctuation">;</span>
+	<span class="token property">border-radius</span>        <span class="token punctuation">:</span> <span class="token variable">@radius</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">#header</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.border-radius</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>不带参数的混合器，编译后消失：</p><pre class="language-less"><code><span class="token selector">.wrap()</span> <span class="token punctuation">{</span>
+	<span class="token property">text-wrap</span>  <span class="token punctuation">:</span> wrap<span class="token punctuation">;</span>
+	<span class="token property">white-space</span><span class="token punctuation">:</span> <span class="token operator">-</span>moz<span class="token operator">-</span>pre<span class="token operator">-</span>wrap<span class="token punctuation">;</span>
+	<span class="token property">white-space</span><span class="token punctuation">:</span> pre<span class="token operator">-</span>wrap<span class="token punctuation">;</span>
+	<span class="token property">word-wrap</span>  <span class="token punctuation">:</span> break<span class="token operator">-</span>word<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.pre</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.wrap</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.pre</span> <span class="token punctuation">{</span>
+	<span class="token property">text-wrap</span>  <span class="token punctuation">:</span> wrap<span class="token punctuation">;</span>
+	<span class="token property">white-space</span><span class="token punctuation">:</span> -moz-pre-wrap<span class="token punctuation">;</span>
+	<span class="token property">white-space</span><span class="token punctuation">:</span> pre-wrap<span class="token punctuation">;</span>
+	<span class="token property">word-wrap</span>  <span class="token punctuation">:</span> break-word<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="带多个参数的混合器"><a href="#带多个参数的混合器" aria-hidden="true" class="header-anchor">#</a> 带多个参数的混合器</h2><p>参数可用<code>,</code>或<code>;</code>隔开，建议使用分号。因为逗号有双重意义：隔开参数；隔开CSS的列表内容。</p><p>若使用逗号隔开，就不能使用逗号作为CSS的列表隔离器。此外，如果形参和实参中只要有一个分号，就会默认使用分号作为参数隔离器，而所有逗号都作为CSS列表隔离器：</p><ul><li>2个参数，每个参数都为列表：<code>.name(1, 2, 3; something else)</code></li><li>3个参数，每个参数都是一个数字：<code>.name(1, 2, 3)</code></li><li>1个参数，该参数为CSS列表：<code>.name(1, 2, 3;)</code></li><li>1个参数，且初始化默认值：<code>.name(@param1: yellow, blue;)</code></li></ul><p>多个混合器可同名，参数个数也可相同。编译时Less将尽可能多的使用这些混合器。比如调用<code>.mixin(green)</code>时，只要混合器有且只有一个_强制参数（无默认值）_ ，它们中声明的属性都会编译出来：</p><pre class="language-less"><code><span class="token selector">.mixin(<span class="token variable">@color</span>)</span> <span class="token punctuation">{</span>
+	<span class="token property">color-1</span><span class="token punctuation">:</span> <span class="token variable">@color</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.mixin(<span class="token variable">@color</span>, <span class="token variable">@width</span>:20px)</span> <span class="token punctuation">{</span>
+	<span class="token property">color-2</span><span class="token punctuation">:</span> <span class="token variable">@color</span><span class="token punctuation">;</span>
+	<span class="token property">width</span>  <span class="token punctuation">:</span> <span class="token variable">@width</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.mixin(<span class="token variable">@color</span>; <span class="token variable">@padding</span>; <span class="token variable">@margin</span>:2px)</span> <span class="token punctuation">{</span>
+	<span class="token property">color-3</span>  <span class="token punctuation">:</span> <span class="token variable">@color</span><span class="token punctuation">;</span>
+	<span class="token property">padding-3</span><span class="token punctuation">:</span> <span class="token variable">@padding</span><span class="token punctuation">;</span>
+	<span class="token property">margin</span>   <span class="token punctuation">:</span> <span class="token variable">@margin</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.some .selector div</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.mixin</span><span class="token punctuation">(</span>#fff<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.some .selector div</span> <span class="token punctuation">{</span>
+	<span class="token property">color-1</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+	<span class="token property">color-2</span><span class="token punctuation">:</span> #fff<span class="token punctuation">;</span>
+	<span class="token property">width</span>  <span class="token punctuation">:</span> 20px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="默认参数"><a href="#默认参数" aria-hidden="true" class="header-anchor">#</a> 默认参数</h2><p>实参顺序不必与形参相同。不过，如果同时有默认参数和非默认参数，默认参数一般写在最后：</p><pre class="language-less"><code><span class="token selector">.mixin(<span class="token variable">@color</span>; <span class="token variable">@margin</span>:10px; <span class="token variable">@padding</span>:10px)</span> <span class="token punctuation">{</span>
+	<span class="token property">color</span>  <span class="token punctuation">:</span> <span class="token variable">@color</span><span class="token punctuation">;</span>
+	<span class="token property">margin</span> <span class="token punctuation">:</span> <span class="token variable">@margin</span><span class="token punctuation">;</span>
+	<span class="token property">padding</span><span class="token punctuation">:</span> <span class="token variable">@padding</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.class1</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.mixin</span><span class="token punctuation">(</span>yellow<span class="token punctuation">;</span> <span class="token variable">@padding<span class="token punctuation">:</span></span> 100px<span class="token punctuation">;</span> <span class="token variable">@color<span class="token punctuation">:</span></span> black<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.class2</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.mixin</span><span class="token punctuation">(</span>yellow<span class="token punctuation">;</span> <span class="token variable">@padding<span class="token punctuation">:</span></span> 100px<span class="token punctuation">;</span> <span class="token variable">@margin<span class="token punctuation">:</span></span> 100px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.class3</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.mixin</span><span class="token punctuation">(</span>yellow<span class="token punctuation">;</span> 1000px<span class="token punctuation">;</span> <span class="token variable">@padding<span class="token punctuation">:</span></span> 100px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.class1</span> <span class="token punctuation">{</span>
+	<span class="token property">color</span>  <span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+	<span class="token property">margin</span> <span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+	<span class="token property">padding</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.class2</span> <span class="token punctuation">{</span>
+	<span class="token property">color</span>  <span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+	<span class="token property">margin</span> <span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+	<span class="token property">padding</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.class3</span> <span class="token punctuation">{</span>
+	<span class="token property">color</span>  <span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+	<span class="token property">margin</span> <span class="token punctuation">:</span> 1000px<span class="token punctuation">;</span>
+	<span class="token property">padding</span><span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="arguments变量"><a href="#arguments变量" aria-hidden="true" class="header-anchor">#</a><code>@arguments</code>变量</h2><p><code>@arguments</code>变量表示混合器的所有形参（与js类似）：</p><pre class="language-less"><code><span class="token selector">.box-shadow(<span class="token variable">@x</span>:0; <span class="token variable">@y</span>: 0; <span class="token variable">@blur</span>: 1px; <span class="token variable">@color</span>: #000)</span> <span class="token punctuation">{</span>
+	<span class="token property">-webkit-box-shadow</span><span class="token punctuation">:</span> <span class="token variable">@arguments</span><span class="token punctuation">;</span>
+	<span class="token property">-moz-box-shadow</span>   <span class="token punctuation">:</span> <span class="token variable">@arguments</span><span class="token punctuation">;</span>
+	<span class="token property">box-shadow</span>        <span class="token punctuation">:</span> <span class="token variable">@arguments</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.big-block</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.box-shadow</span><span class="token punctuation">(</span><span class="token variable">@x<span class="token punctuation">:</span></span> 2px<span class="token punctuation">;</span> <span class="token variable">@y<span class="token punctuation">:</span></span> 3px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.big-block</span> <span class="token punctuation">{</span>
+	<span class="token property">-webkit-box-shadow</span><span class="token punctuation">:</span> 2px 3px 1px #000<span class="token punctuation">;</span>
+	<span class="token property">-moz-box-shadow</span>   <span class="token punctuation">:</span> 2px 3px 1px #000<span class="token punctuation">;</span>
+	<span class="token property">box-shadow</span>        <span class="token punctuation">:</span> 2px 3px 1px #000<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="rest变量"><a href="#rest变量" aria-hidden="true" class="header-anchor">#</a><code>@rest</code>变量</h2><p>如果混合器参数在不同调用中个数可能发生变化，声明时可使用<code>...</code>关键字表示：</p><pre class="language-less"><code><span class="token selector">.mixin(...)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token comment">//0-n个实参</span>
+<span class="token selector">.mixin()</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token comment">//0个实参</span>
+<span class="token selector">.mixin(<span class="token variable">@a</span>: 1)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token comment">//0-1个实参</span>
+<span class="token selector">.mixin(<span class="token variable">@a</span>: 1; <span class="token variable">@rest</span>...)</span><span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token comment">//0-n个实参</span>
+.<span class="token function">mixin</span><span class="token punctuation">(</span><span class="token variable">@a</span><span class="token punctuation">;</span> <span class="token variable">@rest</span>...<span class="token punctuation">)</span><span class="token comment">//1-n个实参</span>
+</code></pre><pre class="language-less"><code><span class="token selector">.mixin(<span class="token variable">@a</span>; <span class="token variable">@rest</span>...)</span><span class="token punctuation">{</span>
+	<span class="token comment">// @rest表示参数@a后的所有参数</span>
+	<span class="token comment">// @arguments表示所有参数</span>
+<span class="token punctuation">}</span>
+</code></pre><pre class="language-less"><code><span class="token selector">.box-shadow(<span class="token variable">@x</span>; <span class="token variable">@rest</span>...)</span> <span class="token punctuation">{</span>
+	<span class="token property">-webkit-box-shadow</span><span class="token punctuation">:</span> <span class="token variable">@x</span> <span class="token variable">@rest</span><span class="token punctuation">;</span>
+	<span class="token property">-moz-box-shadow</span>   <span class="token punctuation">:</span> <span class="token variable">@x</span> <span class="token variable">@rest</span><span class="token punctuation">;</span>
+	<span class="token property">box-shadow</span>        <span class="token punctuation">:</span> <span class="token variable">@x</span> <span class="token variable">@rest</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.big-block</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.box-shadow</span><span class="token punctuation">(</span>10px<span class="token punctuation">;</span> 2px<span class="token punctuation">;</span> 1px<span class="token punctuation">;</span> <span class="token mixin-usage function">#fff)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.big-block</span> <span class="token punctuation">{</span>
+	<span class="token property">-webkit-box-shadow</span><span class="token punctuation">:</span> 10px 2px 1px #fff<span class="token punctuation">;</span>
+	<span class="token property">-moz-box-shadow</span>   <span class="token punctuation">:</span> 10px 2px 1px #fff<span class="token punctuation">;</span>
+	<span class="token property">box-shadow</span>        <span class="token punctuation">:</span> 10px 2px 1px #fff<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="模式匹配"><a href="#模式匹配" aria-hidden="true" class="header-anchor">#</a> 模式匹配</h2><p>如需要混合器根据环境的不同改变其行为，可利用模式匹配。即根据传入实参的不同，改变行为：</p><pre class="language-less"><code><span class="token selector">.mixin(dark; <span class="token variable">@color</span>)</span> <span class="token punctuation">{</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">darken</span><span class="token punctuation">(</span><span class="token variable">@color</span><span class="token punctuation">,</span> 10%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.mixin(light; <span class="token variable">@color</span>)</span> <span class="token punctuation">{</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> <span class="token function">lighten</span><span class="token punctuation">(</span><span class="token variable">@color</span><span class="token punctuation">,</span> 10%<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.mixin(<span class="token variable">@_</span>, <span class="token variable">@color</span>)</span> <span class="token punctuation">{</span>
+	<span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token variable">@switch<span class="token punctuation">:</span></span> light<span class="token punctuation">;</span>
+<span class="token selector">.class</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.mixin</span><span class="token punctuation">(</span><span class="token variable">@switch</span><span class="token punctuation">;</span> #999<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.class</span> <span class="token punctuation">{</span>
+	<span class="token property">color</span>  <span class="token punctuation">:</span> #808080<span class="token punctuation">;</span>
+	<span class="token property">display</span><span class="token punctuation">:</span> block<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><ul><li>第一个mixin没有匹配：第一个形参为<code>dark</code></li><li>第二个mixin匹配：第一个形参为<code>light</code></li><li>第三个mixin匹配：第一个形参可为任意值</li></ul><p><strong>形参如果是变量，与任意值匹配；形参如果不是变量，需与该形参完全一致。</strong></p><h2 id="混合器的“返回值”"><a href="#混合器的“返回值”" aria-hidden="true" class="header-anchor">#</a> 混合器的“返回值”</h2><p>调用混合器的作用域中，被调用混合器中声明的变量和混合器可见：</p><pre class="language-less"><code><span class="token selector">.mixin()</span> <span class="token punctuation">{</span>
+	<span class="token variable">@width<span class="token punctuation">:</span></span> 100px<span class="token punctuation">;</span>
+	<span class="token selector">.inner-mixin()</span> <span class="token punctuation">{</span>
+		<span class="token variable">@height<span class="token punctuation">:</span></span> 10px<span class="token punctuation">;</span>
+		<span class="token property">height</span> <span class="token punctuation">:</span> <span class="token variable">@height</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.caller</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.mixin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token property">width</span> <span class="token punctuation">:</span> <span class="token variable">@width</span><span class="token punctuation">;</span>
+	<span class="token mixin-usage function">.inner-mixin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token property">height</span><span class="token punctuation">:</span> <span class="token variable">@height</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.caller</span> <span class="token punctuation">{</span>
+	<span class="token property">width</span> <span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+	<span class="token property">height</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>唯一例外的是，如果调用作用域本身声明的变量名相同，不会被重载：</p><pre class="language-less"><code><span class="token selector">.mixin()</span> <span class="token punctuation">{</span>
+	<span class="token variable">@width <span class="token punctuation">:</span></span> 100px<span class="token punctuation">;</span>
+	<span class="token variable">@height<span class="token punctuation">:</span></span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.caller</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.mixin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token variable">@height<span class="token punctuation">:</span></span> 1000px<span class="token punctuation">;</span>
+	<span class="token property">width</span>  <span class="token punctuation">:</span> <span class="token variable">@width</span><span class="token punctuation">;</span>
+	<span class="token property">height</span> <span class="token punctuation">:</span> <span class="token variable">@height</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.caller</span> <span class="token punctuation">{</span>
+	<span class="token property">width</span> <span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+	<span class="token property">height</span><span class="token punctuation">:</span> 1000px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>不过只限于调用环境的本地作用域，来自其父作用域的变量会被重载：</p><pre class="language-less"><code><span class="token selector">.mixin()</span> <span class="token punctuation">{</span>
+	<span class="token variable">@width <span class="token punctuation">:</span></span> 100px<span class="token punctuation">;</span>
+	<span class="token variable">@height<span class="token punctuation">:</span></span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.caller-parent</span> <span class="token punctuation">{</span>
+	<span class="token variable">@height<span class="token punctuation">:</span></span> 1000px<span class="token punctuation">;</span>
+	<span class="token selector">.caller</span> <span class="token punctuation">{</span>
+		<span class="token mixin-usage function">.mixin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+		<span class="token property">width</span> <span class="token punctuation">:</span> <span class="token variable">@width</span><span class="token punctuation">;</span>
+		<span class="token property">height</span><span class="token punctuation">:</span> <span class="token variable">@height</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.caller-parent .caller</span> <span class="token punctuation">{</span>
+	<span class="token property">width</span> <span class="token punctuation">:</span> 100px<span class="token punctuation">;</span>
+	<span class="token property">height</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>由上可见，混合器中定义的变量具有返回值的功能，使得混合器与真正的函数相差无几：</p><pre class="language-less"><code><span class="token selector">.average(<span class="token variable">@x</span>, <span class="token variable">@y</span>)</span><span class="token punctuation">{</span>
+	<span class="token variable">@average<span class="token punctuation">:</span></span> <span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token variable">@x</span> <span class="token operator">+</span> <span class="token variable">@y</span><span class="token punctuation">)</span> <span class="token operator">/</span> 2<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token selector">div</span><span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.average</span><span class="token punctuation">(</span>16px<span class="token punctuation">,</span> 50px<span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token property">padding</span><span class="token punctuation">:</span> <span class="token variable">@average</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+	<span class="token property">padding</span><span class="token punctuation">:</span> 33px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>混合器中定义的混合器，也可作为“返回值”：</p><pre class="language-less"><code><span class="token selector">.unlock(<span class="token variable">@value</span>)</span> <span class="token punctuation">{</span>
+	<span class="token selector">.doSomething()</span> <span class="token punctuation">{</span>
+		<span class="token property">padding</span><span class="token punctuation">:</span> <span class="token variable">@value</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">div</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.unlock</span><span class="token punctuation">(</span>10px<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//将混合器doSomething作为返回值</span>
+	.<span class="token function">doSomething</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//调用doSomething混合器</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">div</span> <span class="token punctuation">{</span>
+	<span class="token property">padding</span><span class="token punctuation">:</span> 10px<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="非绑定属性声明集（detached-ruleset）"><a href="#非绑定属性声明集（detached-ruleset）" aria-hidden="true" class="header-anchor">#</a> 非绑定属性声明集（Detached Ruleset）</h2><p>非绑定属性声明集：具有所有Less声明特性，只是不包含选择器。可如混合器一样调用，只是调用时后面的小括号不能省略（<code>@detached-ruleset();</code>）：</p><pre class="language-less"><code><span class="token atrule">@detached-ruleset<span class="token punctuation">:</span></span> <span class="token punctuation">{</span>
+	<span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token selector">.top</span> <span class="token punctuation">{</span>
+	<span class="token variable">@detached-ruleset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//小括号()不能省略！！！</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.top</span> <span class="token punctuation">{</span>
+	<span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>同时还可作为混合器参数，在媒体查询和浏览器兼容方面实用性很强：</p><pre class="language-less"><code><span class="token selector">.desktop-and-old-ie(<span class="token variable">@rules</span>)</span> <span class="token punctuation">{</span>
+	<span class="token atrule">@media screen and <span class="token punctuation">(</span>min-width<span class="token punctuation">:</span> 1200px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+		 <span class="token variable">@rules</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token selector">html.lt-ie9 &amp;</span> <span class="token punctuation">{</span>
+		<span class="token variable">@rules</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">header</span> <span class="token punctuation">{</span>
+	<span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+	<span class="token selector">.desktop-and-old-ie(</span><span class="token punctuation">{</span> <span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">header</span> <span class="token punctuation">{</span>
+	<span class="token property">background-color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token atrule"><span class="token rule">@media</span> screen and <span class="token punctuation">(</span><span class="token property">min-width</span><span class="token punctuation">:</span> 1200px<span class="token punctuation">)</span></span> <span class="token punctuation">{</span>
+	<span class="token selector">header</span> <span class="token punctuation">{</span>
+		<span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">html.lt-ie9 header</span> <span class="token punctuation">{</span>
+	<span class="token property">background-color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>同混合器一样，也可将混合器作为返回值：</p><pre class="language-less"><code><span class="token atrule">@detached-ruleset<span class="token punctuation">:</span></span> <span class="token punctuation">{</span>
+	<span class="token selector">.mixin()</span> <span class="token punctuation">{</span>
+		<span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token selector">.caller</span> <span class="token punctuation">{</span>
+	<span class="token variable">@detached-ruleset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token mixin-usage function">.mixin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.caller</span> <span class="token punctuation">{</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>然而，不能将变量作为返回值：</p><pre class="language-less"><code><span class="token atrule">@detached-ruleset<span class="token punctuation">:</span></span> <span class="token punctuation">{</span>
+	<span class="token variable">@color<span class="token punctuation">:</span></span> blue<span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token selector">.caller</span> <span class="token punctuation">{</span>
+	<span class="token variable">@detached-ruleset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">@color</span><span class="token punctuation">;</span> <span class="token comment">//报错</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="作用域"><a href="#作用域" aria-hidden="true" class="header-anchor">#</a> 作用域</h3><h4 id="对自身声明环境，以及调用环境的变量和混合器都可见"><a href="#对自身声明环境，以及调用环境的变量和混合器都可见" aria-hidden="true" class="header-anchor">#</a> 对自身声明环境，以及调用环境的变量和混合器都可见</h4><p>对自身定义环境变量和混合器可见，这点显而易见，来看看后者：</p><pre class="language-less"><code><span class="token atrule">@detached-ruleset<span class="token punctuation">:</span></span> <span class="token punctuation">{</span>
+	<span class="token property">caller-variable</span><span class="token punctuation">:</span> <span class="token variable">@caller-variable</span><span class="token punctuation">;</span> <span class="token comment">//变量未定义</span>
+	.<span class="token function">caller-mixin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//混合器未定义</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token selector">selector</span> <span class="token punctuation">{</span>
+	<span class="token comment">// 调用属性声明集</span>
+	<span class="token variable">@detached-ruleset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token comment">// 在调用环境中声明变量和混合器</span>
+	<span class="token variable">@caller-variable<span class="token punctuation">:</span></span> value<span class="token punctuation">;</span>
+	<span class="token selector">.caller-mixin()</span> <span class="token punctuation">{</span>
+		<span class="token property">mixin</span><span class="token punctuation">:</span> definition<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">selector</span> <span class="token punctuation">{</span>
+	<span class="token property">caller-variable</span><span class="token punctuation">:</span> value<span class="token punctuation">;</span>
+	<span class="token property">mixin</span>          <span class="token punctuation">:</span> definition<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>不过，如果自身定义环境与调用环境的变量或混合器重名，自身定义环境的变量和混合器优先：</p><pre class="language-less"><code><span class="token variable">@variable<span class="token punctuation">:</span></span> global<span class="token punctuation">;</span>
+<span class="token atrule">@detached-ruleset<span class="token punctuation">:</span></span> <span class="token punctuation">{</span>
+	<span class="token comment">// 这里就可见全局环境，所以使用全局环境中的@variable变量</span>
+	<span class="token comment">// 如果这里也定义了变量@variable，将使用此处的定义。</span>
+	<span class="token comment">// @variable: local-definition;</span>
+	<span class="token property">variable</span><span class="token punctuation">:</span> <span class="token variable">@variable</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token selector">selector</span> <span class="token punctuation">{</span>
+	<span class="token variable">@detached-ruleset</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token variable">@variable<span class="token punctuation">:</span></span> caller<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">selector</span> <span class="token punctuation">{</span>
+	<span class="token property">variable</span><span class="token punctuation">:</span> global<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h4 id="复制不会改变非绑定属性声明集的作用域（没理解）"><a href="#复制不会改变非绑定属性声明集的作用域（没理解）" aria-hidden="true" class="header-anchor">#</a> 复制不会改变非绑定属性声明集的作用域（没理解）</h4><pre class="language-less"><code><span class="token atrule">@detached-1<span class="token punctuation">:</span></span> <span class="token punctuation">{</span>
+	<span class="token property">scope-detached</span><span class="token punctuation">:</span> <span class="token variable">@two</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+<span class="token selector">.one</span> <span class="token punctuation">{</span>
+	<span class="token variable">@one<span class="token punctuation">:</span></span> visible<span class="token operator">-</span>one<span class="token punctuation">;</span>
+	<span class="token selector">.two</span> <span class="token punctuation">{</span>
+		<span class="token variable">@detached-2<span class="token punctuation">:</span></span> <span class="token variable">@detached-1</span><span class="token punctuation">;</span> <span class="token comment">//复制/重命名非绑定属性声明集</span>
+		<span class="token variable">@two       <span class="token punctuation">:</span></span> visible<span class="token operator">-</span>two<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.use-place</span> <span class="token punctuation">{</span>
+	<span class="token comment">//对@detached-1和@detached-2，仅解锁了@two， 都没解锁@one</span>
+	.one &gt; .<span class="token function">two</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token variable">@detached-1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.use-place</span> <span class="token punctuation">{</span>
+	<span class="token property">scope-detached</span><span class="token punctuation">:</span> visible-two<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>如果源码首行为：</p><pre class="language-less"><code><span class="token atrule">@detached-1<span class="token punctuation">:</span></span> <span class="token punctuation">{</span>
+	<span class="token property">scope-detached</span><span class="token punctuation">:</span> <span class="token variable">@one</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><p>则报错。</p><h4 id="解锁会改变非绑定属性声明集的作用域"><a href="#解锁会改变非绑定属性声明集的作用域" aria-hidden="true" class="header-anchor">#</a> 解锁会改变非绑定属性声明集的作用域</h4><pre class="language-less"><code><span class="token selector">#space</span> <span class="token punctuation">{</span>
+	<span class="token selector">.importer-1</span> <span class="token punctuation">{</span>
+		<span class="token atrule">@detached<span class="token punctuation">:</span></span> <span class="token punctuation">{</span>
+			<span class="token property">scope-detached</span><span class="token punctuation">:</span> <span class="token variable">@variable</span>
+		<span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token comment">//定义非绑定属性声明集</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.importer-2()</span> <span class="token punctuation">{</span>
+	<span class="token variable">@variable<span class="token punctuation">:</span></span> value<span class="token punctuation">;</span> <span class="token comment">//被解锁后的非绑定属性声明集可见此变量</span>
+	#space &gt; .<span class="token function">importer-1</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//解锁非绑定属性声明集</span>
+	<span class="token comment">// @detached();</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.use-place</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.importer-2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//第二次解锁</span>
+	<span class="token comment">// @variable: value2;</span>
+	<span class="token variable">@detached</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.use-place</span> <span class="token punctuation">{</span>
+  <span class="token property">scope-detached</span><span class="token punctuation">:</span> value<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h1 id="带条件的混合器"><a href="#带条件的混合器" aria-hidden="true" class="header-anchor">#</a> 带条件的混合器</h1><p>具有<code>if/else</code>条件语句功能，不过使用<code>@media</code>的形式。主要使用关键字<code>when</code>。
+如下例：</p><pre class="language-less"><code><span class="token selector">.mixin(<span class="token variable">@a</span>) when (lightness(<span class="token variable">@a</span>) &gt; = 50)</span> <span class="token punctuation">{</span>
+	<span class="token property">background-color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.mixin(<span class="token variable">@a</span>) when (lightness(<span class="token variable">@a</span>)&lt; 50)</span> <span class="token punctuation">{</span>
+	<span class="token property">background-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.mixin(<span class="token variable">@a</span>)</span> <span class="token punctuation">{</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> <span class="token variable">@a</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.class1</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.mixin</span><span class="token punctuation">(</span>#ddd<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.class2</span> <span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.mixin</span><span class="token punctuation">(</span>#111<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">.class1</span> <span class="token punctuation">{</span>
+	<span class="token property">background-color</span><span class="token punctuation">:</span> black<span class="token punctuation">;</span>
+	<span class="token property">color</span>           <span class="token punctuation">:</span> #ddd<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.class2</span> <span class="token punctuation">{</span>
+	<span class="token property">background-color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+	<span class="token property">color</span>           <span class="token punctuation">:</span> #111<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="比较操作符"><a href="#比较操作符" aria-hidden="true" class="header-anchor">#</a> 比较操作符</h2><p>比较操作符有<code>&gt;</code>、<code>&gt;=</code>、<code>=</code>、<code>=&lt;</code>、<code>&lt;</code>。此外，关键字<code>true</code>是唯一真值。下面两例等价：</p><pre class="language-less"><code><span class="token selector">.truth(<span class="token variable">@a</span>) when (<span class="token variable">@a</span>)</span> <span class="token punctuation">{</span>...<span class="token punctuation">}</span>
+<span class="token selector">.truth(<span class="token variable">@a</span>) when (<span class="token variable">@a</span> = true)</span> <span class="token punctuation">{</span>...<span class="token punctuation">}</span>
+</code></pre><p>所有除<code>true</code>以外的值都为假：</p><pre class="language-less"><code><span class="token selector">.class</span><span class="token punctuation">{</span>
+	<span class="token mixin-usage function">.truth</span><span class="token punctuation">(</span>40<span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">//40为假，所以不与上面的任何一个匹配。</span>
+<span class="token punctuation">}</span>
+</code></pre><p>参数不仅可与参数比较，也可同其他值比较：</p><pre class="language-less"><code><span class="token variable">@media<span class="token punctuation">:</span></span> mobile<span class="token punctuation">;</span>
+
+<span class="token selector">.mixin(<span class="token variable">@a</span>) when (<span class="token variable">@media</span> = mobile)</span><span class="token punctuation">{</span>...<span class="token punctuation">}</span>
+<span class="token selector">.mixin(<span class="token variable">@a</span>) when (<span class="token variable">@media</span> = desktop)</span><span class="token punctuation">{</span>...<span class="token punctuation">}</span>
+
+<span class="token selector">.mixin(<span class="token variable">@a</span>; <span class="token variable">@b</span>) when (<span class="token variable">@a</span> &gt; <span class="token variable">@b</span>)</span> <span class="token punctuation">{</span><span class="token property">width</span><span class="token punctuation">:</span> <span class="token variable">@a</span><span class="token punctuation">}</span>
+<span class="token selector">.mixin(<span class="token variable">@a</span>; <span class="token variable">@b</span>) when (<span class="token variable">@a</span> &lt; <span class="token variable">@b</span>)</span> <span class="token punctuation">{</span><span class="token property">width</span><span class="token punctuation">:</span> <span class="token variable">@b</span><span class="token punctuation">}</span>
+</code></pre><h2 id="逻辑操作符"><a href="#逻辑操作符" aria-hidden="true" class="header-anchor">#</a> 逻辑操作符</h2><h3 id="逻辑与：and"><a href="#逻辑与：and" aria-hidden="true" class="header-anchor">#</a> 逻辑与：<code>and</code></h3><pre class="language-less"><code><span class="token selector">.mixin(<span class="token variable">@a</span>) when (isnumber(<span class="token variable">@a</span>)) and (<span class="token variable">@a</span> &gt; 10)</span> <span class="token punctuation">{</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> <span class="token variable">@a</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h3 id="逻辑或：or"><a href="#逻辑或：or" aria-hidden="true" class="header-anchor">#</a> 逻辑或：<code>or</code></h3><p>使用逗号将语句隔开，表示逻辑非：</p><pre class="language-less"><code><span class="token selector">.mixin(<span class="token variable">@a</span>) when (<span class="token variable">@a</span> &gt; 10) or (<span class="token variable">@a</span> &lt; -10)</span><span class="token punctuation">{</span>...<span class="token punctuation">}</span>
+</code></pre><h3 id="逻辑非：not"><a href="#逻辑非：not" aria-hidden="true" class="header-anchor">#</a> 逻辑非：<code>not</code></h3><pre class="language-less"><code><span class="token selector">.mixin(<span class="token variable">@a</span>) when not(<span class="token variable">@a</span> &lt; -10)</span> <span class="token punctuation">{</span>
+	<span class="token property">width</span><span class="token punctuation">:</span> <span class="token variable">@a</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><h2 id="类型检测"><a href="#类型检测" aria-hidden="true" class="header-anchor">#</a> 类型检测</h2><p>使用<code>is*</code>函数检测数据类型：</p><pre class="language-less"><code><span class="token selector">.mixin(<span class="token variable">@a</span>; <span class="token variable">@b</span>:0) when(isnumber(<span class="token variable">@b</span>))</span> <span class="token punctuation">{</span>
+	<span class="token property">width</span> <span class="token punctuation">:</span> <span class="token variable">@a</span><span class="token punctuation">;</span>
+	<span class="token property">height</span><span class="token punctuation">:</span> <span class="token variable">@b</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>基本检测函数：</p><ul><li><code>iscolor</code></li><li><code>isnumber</code></li><li><code>isstring</code></li><li><code>iskeyword</code></li><li><code>isurl</code></li></ul><p>还可检测数值所带单位：</p><ul><li><code>ispixel</code></li><li><code>ispercentage</code></li><li><code>isem</code></li><li><code>isunit</code></li></ul><h2 id="default-函数"><a href="#default-函数" aria-hidden="true" class="header-anchor">#</a><code>default()</code>函数</h2><pre class="language-less"><code><span class="token selector">.mixin(<span class="token variable">@a</span>; <span class="token variable">@b</span>:0) when(isnumber(<span class="token variable">@b</span>))</span> <span class="token punctuation">{</span>
+	<span class="token property">width</span> <span class="token punctuation">:</span> <span class="token variable">@a</span><span class="token punctuation">;</span>
+	<span class="token property">height</span><span class="token punctuation">:</span> <span class="token variable">@b</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token selector">.mixin(<span class="token variable">@a</span>; <span class="token variable">@b</span>) when (default())</span> <span class="token punctuation">{</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> yellow<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+相当于编程语言`switch`语句中的`default`。即其他混合器都不能匹配时，就使用此混合器。
+</code></pre><h2 id="带条件的css选择器"><a href="#带条件的css选择器" aria-hidden="true" class="header-anchor">#</a> 带条件的CSS选择器</h2><p>CSS选择器同样可以限制：</p><pre class="language-less"><code><span class="token variable">@my-option<span class="token punctuation">:</span></span> true<span class="token punctuation">;</span>
+<span class="token selector">button when (<span class="token variable">@my-option</span> = true)</span> <span class="token punctuation">{</span>
+	<span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>编译为：</p><pre class="language-css"><code><span class="token selector">button</span> <span class="token punctuation">{</span>
+  <span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><p>也可用来限制多个选择器：</p><pre class="language-less"><code><span class="token variable">@my-option<span class="token punctuation">:</span></span> true<span class="token punctuation">;</span>
+<span class="token selector">&amp; when (<span class="token variable">@my-option</span> = true)</span> <span class="token punctuation">{</span>
+	<span class="token selector">button</span> <span class="token punctuation">{</span>
+		<span class="token property">color</span><span class="token punctuation">:</span> white<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+	<span class="token selector">a</span> <span class="token punctuation">{</span>
+		<span class="token property">color</span><span class="token punctuation">:</span> blue<span class="token punctuation">;</span>
+	<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><!----><div class="content page-nav"><p class="inner"><span class="prev">
+        ← <a href="/styleProcess/less/loop.html" class="prev">
+          循环
+        </a></span><span class="next"><a href="/styleProcess/less/parent.html">
+          父选择
+        </a> →
+      </span></p></div></div></div></div>
+    <script src="/styleProcess/assets/js/11.b1e4c8db.js" defer></script><script src="/styleProcess/assets/js/app.e3b621a4.js" defer></script>
+  </body>
+</html>
